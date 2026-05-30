@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapport parent — OptimizeMyLife</title>
+    <meta name="description" content="Le rapport parent d'OptimizeMyLife : un suivi clair et rassurant de la progression de votre enfant, disponible en mode clair ou foncé." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navigation principale">
+        <a class="brand" href="index.html">
+          <span class="brand__badge felix"><img src="assets/felix/felix-badge.png" alt="Félix" /><span class="felix__ph" aria-hidden="true"><b>F</b></span></span>
+          Optimize<b>MyLife</b>
+        </a>
+        <div class="nav__links">
+          <a href="cockpit.html">Cockpit</a>
+          <a href="rapport-parent.html" aria-current="page">Rapport parent</a>
+          <a href="agent-lab.html">Agent Lab</a>
+        </div>
+        <div class="nav__cta">
+          <button class="theme-toggle" data-theme-toggle><span data-theme-label>Mode clair</span> 🌓</button>
+          <button class="nav__toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section section--tight">
+        <div class="container">
+          <div class="flex between items-center flex-wrap gap" style="margin-bottom: 28px">
+            <div>
+              <p class="eyebrow">Rapport hebdomadaire</p>
+              <h1 class="h-1">Suivi de la progression d'Emma</h1>
+              <p class="muted">Semaine du 25 au 31 mai 2026 · Parcours Ado 15–21</p>
+            </div>
+            <div class="flex gap">
+              <button class="btn btn--ghost btn--sm">↧ Télécharger (PDF)</button>
+              <button class="btn btn--primary btn--sm">Envoyer par e-mail</button>
+            </div>
+          </div>
+
+          <div class="note note--warm" style="margin-bottom: 28px">
+            <span>🌓</span>
+            <p><b>Astuce :</b> ce rapport s'affiche en mode foncé ou clair. Utilisez le bouton « Mode clair » en haut à droite pour basculer — pratique pour l'impression ou la lecture du soir.</p>
+          </div>
+
+          <!-- Synthèse -->
+          <div class="grid grid--4">
+            <div class="stat"><div class="stat__label">Temps d'apprentissage</div><div class="stat__value">2 h 40</div><div class="stat__trend up">+25 min</div></div>
+            <div class="stat"><div class="stat__label">Modules terminés</div><div class="stat__value">3</div><div class="stat__trend up">Objectif atteint</div></div>
+            <div class="stat"><div class="stat__label">Régularité</div><div class="stat__value">5/7 j</div><div class="stat__trend up">Très bien</div></div>
+            <div class="stat"><div class="stat__label">Projet en cours</div><div class="stat__value">1</div><div class="stat__trend">Mini-application</div></div>
+          </div>
+
+          <!-- Détail -->
+          <div class="grid grid--2" style="margin-top: 26px; align-items: start">
+            <div class="card">
+              <h3 class="h-3" style="margin-bottom: 16px">Ce que votre enfant a appris</h3>
+              <div class="stack">
+                <div><b>Prompts efficaces</b><p class="muted" style="font-size: 14px">A appris à formuler des demandes claires et à reformuler pour obtenir de meilleurs résultats.</p></div>
+                <div><b>Esprit critique</b><p class="muted" style="font-size: 14px">A travaillé la vérification des informations et le repérage des erreurs des modèles.</p></div>
+                <div><b>Création responsable</b><p class="muted" style="font-size: 14px">A abordé les notions de droits d'auteur et d'intégrité scolaire.</p></div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="h-3" style="margin-bottom: 16px">Le mot de Félix</h3>
+              <div class="flex gap" style="align-items: flex-start">
+                <div class="felix" style="width: 92px; flex: none">
+                  <img src="assets/felix/felix-celebrate.png" alt="Félix" />
+                  <span class="felix__ph" aria-hidden="true"><b>F</b></span>
+                </div>
+                <p class="muted">« Emma progresse avec régularité et fait preuve d'une belle curiosité. Cette semaine, elle a particulièrement bien travaillé la formulation des consignes. La prochaine étape sera son premier mini-projet — un beau moment à encourager. »</p>
+              </div>
+              <div class="note" style="margin-top: 18px">
+                <span>✅</span>
+                <p><b>Recommandation :</b> félicitez sa régularité et proposez-lui de vous présenter son projet une fois terminé.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Confidentialité -->
+          <div class="card" style="margin-top: 26px">
+            <h3 class="h-3" style="margin-bottom: 8px">Votre tranquillité d'esprit</h3>
+            <div class="grid grid--3" style="margin-top: 12px">
+              <div class="note"><span>🔒</span><p>Environnement encadré et adapté à l'âge.</p></div>
+              <div class="note"><span>👁️</span><p>Vous gardez la visibilité sur l'activité.</p></div>
+              <div class="note"><span>⚙️</span><p>Vous gérez les accès à tout moment.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__bottom" style="border: 0; margin: 0; padding: 0">
+          <span>© <span data-year>2026</span> OptimizeMyLife — Rapport parent.</span>
+          <span><a href="index.html" style="color: var(--warm-light)">Retour à l'accueil</a></span>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

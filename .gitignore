@@ -6,6 +6,7 @@ dist/
 build/
 .next/
 out/
+build-report.json
 
 # Environment
 .env

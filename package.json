@@ -1,0 +1,13 @@
+{
+  "name": "optimizemylife",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OptimizeMyLife — apprendre l'IA en famille avec Félix, mentor IA. Site statique premium.",
+  "type": "module",
+  "scripts": {
+    "lint": "node scripts/lint.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "npm run lint && npm run build"
+  },
+  "license": "UNLICENSED"
+}

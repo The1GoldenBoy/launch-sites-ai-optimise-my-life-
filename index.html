@@ -1,23 +1,381 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OptimizeMyLife</title>
+    <title>OptimizeMyLife — Apprendre l'IA avec Félix, votre mentor</title>
+    <meta
+      name="description"
+      content="OptimizeMyLife : une plateforme premium pour apprendre l'IA en famille. Parcours Junior, Ado, Business adulte, cours vivants mis à jour et un mentor IA, Félix, qui vous accompagne."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell">
+    <!-- ===================== En-tête ===================== -->
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navigation principale">
+        <a class="brand" href="index.html">
+          <span class="brand__badge felix">
+            <img src="assets/felix/felix-badge.png" alt="Félix" />
+            <span class="felix__ph" aria-hidden="true"><b>Félix</b></span>
+          </span>
+          Optimize<b>MyLife</b>
+        </a>
+        <div class="nav__links">
+          <div class="nav__group" data-open="false">
+            <button aria-haspopup="true">Produits ▾</button>
+            <div class="nav__menu" role="menu">
+              <a href="produits/junior.html">Junior <small>9–14 ans</small></a>
+              <a href="produits/ado.html">Ado <small>15–21 ans</small></a>
+              <a href="produits/business-ia.html">Business IA <small>Adultes</small></a>
+              <a href="produits/package-cours.html">Package de cours <small>Tout-en-un</small></a>
+            </div>
+          </div>
+          <a href="#cours">Cours</a>
+          <a href="agent-lab.html">Agent Lab</a>
+          <a href="rapport-parent.html">Rapport parent</a>
+          <a href="cockpit.html">Cockpit</a>
+        </div>
+        <div class="nav__cta">
+          <a class="btn btn--ghost btn--sm" href="login.html">Connexion</a>
+          <a class="btn btn--primary btn--sm" href="produits/package-cours.html">Découvrir</a>
+          <button class="nav__toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===================== Hero ===================== -->
       <section class="hero">
-        <div class="brand-mark">Felix</div>
-        <p class="eyebrow">OptimizeMyLife with AI</p>
-        <h1>Get 5-10 hours per week back at home.</h1>
-        <p class="subhead">
-          A practical AI-powered home system for reducing mental load, organizing routines,
-          and making everyday life easier.
-        </p>
-        <a class="button" href="#start">Start here</a>
+        <div class="container hero__grid">
+          <div>
+            <span class="hero__eyebrow-pill">🎓 La plateforme IA pensée pour les familles</span>
+            <h1 class="h-display">
+              Apprenez l'IA avec <span style="color: var(--warm-dark)">Félix</span>, votre mentor.
+            </h1>
+            <p class="lead">
+              OptimizeMyLife guide vos enfants, vos ados et vous-même dans des parcours
+              clairs et concrets pour comprendre et utiliser l'intelligence artificielle —
+              à votre rythme, en toute confiance.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="produits/package-cours.html">Voir les parcours</a>
+              <a class="btn btn--ghost" href="#video" data-video="">▶ Rencontrer Félix</a>
+            </div>
+            <div class="hero__trust">
+              <span>Contenu encadré et adapté à l'âge</span>
+              <span>Cours mis à jour en continu</span>
+              <span>Rapports clairs pour les parents</span>
+            </div>
+          </div>
+          <div class="hero__felix felix">
+            <img src="assets/felix/felix-mentor.png" alt="Félix, mentor IA d'OptimizeMyLife" />
+            <span class="felix__ph" aria-hidden="true">
+              <b>Félix — mentor IA</b>
+              <code>assets/felix/felix-mentor.png</code>
+              <small>Déposez l'asset officiel ici. Félix reste identique aux références.</small>
+            </span>
+            <span class="felix-tag"><span class="felix-dot"></span> Félix est en ligne</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Présentation produit (proche du haut) ===================== -->
+      <section class="section" id="produits">
+        <div class="container">
+          <div class="center stack-sm" style="margin-bottom: 44px">
+            <p class="eyebrow">Nos parcours</p>
+            <h2 class="h-1">Un parcours pour chaque étape de la vie</h2>
+            <p class="lead">
+              Quatre programmes premium, une même exigence : rendre l'IA accessible,
+              utile et responsable. Choisissez le vôtre.
+            </p>
+          </div>
+          <div class="grid grid--4">
+            <article class="card card--hover product-card reveal">
+              <span class="product-card__age tag-junior">Junior · 9–14 ans</span>
+              <h3 class="h-3">Premiers pas guidés</h3>
+              <ul>
+                <li>Découverte ludique et sécurisée</li>
+                <li>Projets créatifs avec Félix</li>
+                <li>Bonnes habitudes dès le départ</li>
+              </ul>
+              <a class="btn btn--ghost btn--sm" href="produits/junior.html">Découvrir Junior</a>
+            </article>
+            <article class="card card--hover product-card reveal">
+              <span class="product-card__age tag-ado">Ado · 15–21 ans</span>
+              <h3 class="h-3">Maîtrise et projets réels</h3>
+              <ul>
+                <li>Outils IA du quotidien</li>
+                <li>Projets portfolio concrets</li>
+                <li>Esprit critique et éthique</li>
+              </ul>
+              <a class="btn btn--ghost btn--sm" href="produits/ado.html">Découvrir Ado</a>
+            </article>
+            <article class="card card--hover product-card reveal">
+              <span class="product-card__age tag-business">Business IA · Adultes</span>
+              <h3 class="h-3">L'IA au service de vos projets</h3>
+              <ul>
+                <li>Automatiser les tâches répétitives</li>
+                <li>Méthodes et flux de travail</li>
+                <li>Cas d'usage professionnels</li>
+              </ul>
+              <a class="btn btn--ghost btn--sm" href="produits/business-ia.html">Découvrir Business</a>
+            </article>
+            <article class="card card--hover product-card reveal">
+              <span class="product-card__age tag-package">Package de cours</span>
+              <h3 class="h-3">Tout l'écosystème</h3>
+              <ul>
+                <li>Tous les parcours réunis</li>
+                <li>Cockpit + rapports parent</li>
+                <li>Mises à jour incluses</li>
+              </ul>
+              <a class="btn btn--primary btn--sm" href="produits/package-cours.html">Voir le package</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Bloc vidéo — Félix se présente ===================== -->
+      <section class="section section--alt" id="video">
+        <div class="container">
+          <div class="grid grid--2" style="align-items: center">
+            <div class="stack">
+              <p class="eyebrow">Votre mentor</p>
+              <h2 class="h-1">Félix vous explique tout en 90 secondes</h2>
+              <p class="lead">
+                Félix n'est pas un simple chatbot. C'est un mentor IA qui présente chaque
+                parcours, accompagne l'apprenant pas à pas et adapte son ton selon l'âge.
+                Regardez sa présentation.
+              </p>
+              <div class="chips">
+                <span class="chip">Ton adapté à l'âge</span>
+                <span class="chip">Accompagnement pas à pas</span>
+                <span class="chip">Toujours rassurant</span>
+              </div>
+            </div>
+            <div class="video-card" data-video="" role="button" tabindex="0" aria-label="Lire la présentation de Félix">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <div class="video-card__cap">
+                <b>« Bonjour, moi c'est Félix »</b>
+                <p>Présentation du mentor IA — 1:30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Section cours ===================== -->
+      <section class="section" id="cours">
+        <div class="container">
+          <div class="center stack-sm" style="margin-bottom: 40px">
+            <p class="eyebrow">La méthode</p>
+            <h2 class="h-1">Des cours clairs, concrets et progressifs</h2>
+            <p class="lead">
+              Chaque module combine une courte leçon, un exercice guidé par Félix et un
+              projet à réaliser. On apprend en faisant.
+            </p>
+          </div>
+          <div class="grid grid--3">
+            <article class="card reveal">
+              <div class="card__icon">📚</div>
+              <h3 class="h-3">Leçons courtes</h3>
+              <p>Des notions essentielles expliquées simplement, sans jargon inutile, en quelques minutes.</p>
+            </article>
+            <article class="card reveal">
+              <div class="card__icon">🧩</div>
+              <h3 class="h-3">Exercices guidés</h3>
+              <p>Félix accompagne chaque étape, donne des indices et corrige avec bienveillance.</p>
+            </article>
+            <article class="card reveal">
+              <div class="card__icon">🚀</div>
+              <h3 class="h-3">Projets concrets</h3>
+              <p>On applique immédiatement : un projet réel à chaque module pour ancrer les acquis.</p>
+            </article>
+          </div>
+
+          <div class="grid grid--3" style="margin-top: 26px; align-items: center">
+            <div style="grid-column: span 1">
+              <div class="felix" style="max-width: 280px; margin-inline: auto">
+                <img src="assets/felix/felix-teach.png" alt="Félix en mode professeur" />
+                <span class="felix__ph" aria-hidden="true">
+                  <b>Félix — explique</b>
+                  <code>assets/felix/felix-teach.png</code>
+                </span>
+              </div>
+            </div>
+            <div class="steps" style="grid-column: span 2">
+              <div class="step"><div><h4>Choisis ton parcours</h4><p>Junior, Ado, Business ou le package complet selon ton objectif.</p></div></div>
+              <div class="step"><div><h4>Avance module par module</h4><p>Félix débloque les étapes une à une et célèbre tes réussites.</p></div></div>
+              <div class="step"><div><h4>Réalise tes projets</h4><p>Tu construis quelque chose de concret à chaque étape.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Carousel de screenshots annotés ===================== -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="center stack-sm" style="margin-bottom: 36px">
+            <p class="eyebrow">À l'intérieur de la plateforme</p>
+            <h2 class="h-1">Une expérience pensée dans le moindre détail</h2>
+            <p class="lead">Aperçus annotés du cockpit, des cours et des rapports parent.</p>
+          </div>
+          <div class="carousel" data-carousel>
+            <div class="carousel__track">
+              <figure class="shot">
+                <div class="shot__frame felix">
+                  <img src="assets/img/shot-cockpit.png" alt="Cockpit apprenant" />
+                  <span class="felix__ph" aria-hidden="true"><b>shot-cockpit.png</b><code>assets/img/</code></span>
+                  <span class="annot annot--warm" style="top: 16%; left: 8%">Progression en direct</span>
+                  <span class="annot" style="bottom: 18%; right: 10%">Prochain module suggéré</span>
+                </div>
+                <figcaption class="shot__body"><b>Cockpit apprenant</b><p>Tout votre parcours en un coup d'œil, guidé par Félix.</p></figcaption>
+              </figure>
+              <figure class="shot">
+                <div class="shot__frame felix">
+                  <img src="assets/img/shot-cours.png" alt="Module de cours" />
+                  <span class="felix__ph" aria-hidden="true"><b>shot-cours.png</b><code>assets/img/</code></span>
+                  <span class="annot annot--warm" style="top: 14%; left: 10%">Leçon + exercice</span>
+                  <span class="annot" style="bottom: 16%; left: 12%">Aide de Félix intégrée</span>
+                </div>
+                <figcaption class="shot__body"><b>Module de cours</b><p>Leçon courte, exercice guidé, projet à réaliser.</p></figcaption>
+              </figure>
+              <figure class="shot">
+                <div class="shot__frame felix">
+                  <img src="assets/img/shot-rapport.png" alt="Rapport parent" />
+                  <span class="felix__ph" aria-hidden="true"><b>shot-rapport.png</b><code>assets/img/</code></span>
+                  <span class="annot annot--warm" style="top: 18%; right: 12%">Mode foncé / clair</span>
+                  <span class="annot" style="bottom: 20%; left: 9%">Synthèse hebdomadaire</span>
+                </div>
+                <figcaption class="shot__body"><b>Rapport parent</b><p>Un suivi clair et rassurant, en mode clair ou foncé.</p></figcaption>
+              </figure>
+            </div>
+            <div class="carousel__nav">
+              <button data-prev aria-label="Précédent">←</button>
+              <button data-next aria-label="Suivant">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Cours vivants + technologies propriétaires ===================== -->
+      <section class="section">
+        <div class="container grid grid--2" style="align-items: center">
+          <div class="stack">
+            <p class="eyebrow">Cours vivants</p>
+            <h2 class="h-1">Des cours qui ne vieillissent pas</h2>
+            <p class="lead">
+              L'IA évolue chaque semaine. Nos technologies propriétaires détectent les
+              changements importants et mettent à jour les leçons concernées — pour que
+              vous appreniez toujours sur des bases actuelles.
+            </p>
+            <div class="grid grid--2" style="gap: 14px">
+              <div class="card"><h3 class="h-3">🔄 Mise à jour continue</h3><p class="muted">Les modules sensibles sont rafraîchis dès qu'une évolution majeure apparaît.</p></div>
+              <div class="card"><h3 class="h-3">🧠 Moteur propriétaire</h3><p class="muted">Notre veille interne transforme l'actualité IA en contenu pédagogique vérifié.</p></div>
+              <div class="card"><h3 class="h-3">🏷️ Versionné</h3><p class="muted">Chaque cours affiche sa date de dernière révision.</p></div>
+              <div class="card"><h3 class="h-3">✅ Vérifié</h3><p class="muted">Relecture humaine avant publication de chaque mise à jour.</p></div>
+            </div>
+          </div>
+          <div class="stack">
+            <p class="eyebrow">Rester à la pointe</p>
+            <h2 class="h-2">Notre plan pour suivre l'industrie IA</h2>
+            <div class="timeline">
+              <div class="timeline__item"><div class="timeline__date">En continu</div><h4>Veille technologique</h4><p>Suivi des modèles, outils et bonnes pratiques majeurs du secteur.</p></div>
+              <div class="timeline__item"><div class="timeline__date">Chaque mois</div><h4>Revue pédagogique</h4><p>Les parcours sont audités et ajustés par notre équipe.</p></div>
+              <div class="timeline__item"><div class="timeline__date">Chaque trimestre</div><h4>Nouveaux modules</h4><p>De nouveaux thèmes apparaissent selon les besoins réels des apprenants.</p></div>
+              <div class="timeline__item future"><div class="timeline__date">À venir</div><h4>Félix s'améliore</h4><p>Voir l'évolution du mentor dans l'Agent Lab.</p></div>
+            </div>
+            <a class="btn btn--ghost" href="agent-lab.html">Visiter l'Agent Lab →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Bannière CTA ===================== -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="banner">
+            <div class="grid grid--2" style="align-items: center">
+              <div>
+                <p class="eyebrow">Prêt à commencer ?</p>
+                <h2 class="h-1">Offrez à votre famille une longueur d'avance sur l'IA</h2>
+                <p class="lead">
+                  Un apprentissage premium, encadré et rassurant. Sans promesse irréaliste —
+                  seulement des compétences concrètes, étape par étape.
+                </p>
+                <div class="banner__actions">
+                  <a class="btn btn--primary" href="produits/package-cours.html">Découvrir le package</a>
+                  <a class="btn btn--ghost" href="login.html">Accéder à mon espace</a>
+                </div>
+              </div>
+              <div class="felix" style="max-width: 320px; margin-inline: auto">
+                <img src="assets/felix/felix-celebrate.png" alt="Félix enthousiaste" />
+                <span class="felix__ph" aria-hidden="true"><b>Félix — célèbre</b><code>assets/felix/felix-celebrate.png</code></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
+    <!-- ===================== Pied de page ===================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <a class="brand" href="index.html">
+              <span class="brand__badge felix"><img src="assets/felix/felix-badge.png" alt="" /><span class="felix__ph" aria-hidden="true"><b>F</b></span></span>
+              Optimize<b style="color: var(--warm-light)">MyLife</b>
+            </a>
+            <p style="max-width: 34ch; color: rgba(255,255,255,0.65); font-size: 14px">
+              Apprendre l'IA en famille, avec un mentor qui vous accompagne et des cours
+              toujours à jour.
+            </p>
+          </div>
+          <div>
+            <h5>Parcours</h5>
+            <a href="produits/junior.html">Junior 9–14</a>
+            <a href="produits/ado.html">Ado 15–21</a>
+            <a href="produits/business-ia.html">Business IA</a>
+            <a href="produits/package-cours.html">Package de cours</a>
+          </div>
+          <div>
+            <h5>Plateforme</h5>
+            <a href="cockpit.html">Cockpit</a>
+            <a href="rapport-parent.html">Rapport parent</a>
+            <a href="agent-lab.html">Agent Lab</a>
+            <a href="login.html">Connexion</a>
+          </div>
+          <div>
+            <h5>À propos</h5>
+            <a href="#video">Le mentor Félix</a>
+            <a href="#cours">La méthode</a>
+            <a href="#produits">Nos parcours</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span data-year>2026</span> OptimizeMyLife. Tous droits réservés.</span>
+          <span>Apprentissage responsable · Aucune promesse de gains · Contenu adapté à l'âge</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modale vidéo partagée -->
+    <div class="modal" data-modal aria-hidden="true">
+      <div class="modal__box">
+        <div class="modal__placeholder">
+          <div class="stack-sm">
+            <b style="font-size: 20px">Vidéo de présentation de Félix</b>
+            <p style="color: rgba(255,255,255,0.7)">
+              Reliez l'URL de la vidéo via l'attribut <code>data-video</code> des boutons.<br />
+              Ex. : <code>data-video="https://www.youtube.com/embed/VOTRE_ID"</code>
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="modal__close" aria-label="Fermer">×</button>
+    </div>
+
+    <script src="scripts/app.js"></script>
   </body>
 </html>

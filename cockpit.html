@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cockpit — OptimizeMyLife</title>
+    <meta name="description" content="Le cockpit OptimizeMyLife : votre tableau de bord d'apprentissage, votre progression et vos prochains modules, guidés par Félix." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cockpit">
+      <!-- Barre latérale -->
+      <aside class="cockpit__aside">
+        <a class="brand" href="index.html">
+          <span class="brand__badge felix"><img src="assets/felix/felix-badge.png" alt="Félix" /><span class="felix__ph" aria-hidden="true"><b>F</b></span></span>
+          Optimize<b>MyLife</b>
+        </a>
+        <nav class="cockpit__nav" aria-label="Navigation du cockpit">
+          <a href="cockpit.html" class="is-active">📊 Tableau de bord</a>
+          <a href="index.html#cours">📚 Mes cours</a>
+          <a href="agent-lab.html">🧪 Agent Lab</a>
+          <a href="rapport-parent.html">👨‍👩‍👧 Rapport parent</a>
+          <a href="produits/package-cours.html">📦 Parcours</a>
+          <a href="login.html">⎋ Déconnexion</a>
+        </nav>
+        <div class="felix" style="margin-top: 28px">
+          <img src="assets/felix/felix-wave.png" alt="Félix salue" />
+          <span class="felix__ph" aria-hidden="true"><b>Félix</b><code>felix-wave.png</code></span>
+        </div>
+        <p class="muted" style="font-size: 13px; margin-top: 12px">« Bravo, tu avances bien cette semaine ! »</p>
+      </aside>
+
+      <!-- Contenu principal -->
+      <main class="cockpit__main">
+        <div class="cockpit__head">
+          <div>
+            <p class="eyebrow">Bonjour 👋</p>
+            <h1 class="h-2">Ton tableau de bord</h1>
+          </div>
+          <div class="flex gap items-center">
+            <button class="theme-toggle" data-theme-toggle><span data-theme-label>Mode foncé</span> 🌓</button>
+            <a class="btn btn--primary btn--sm" href="index.html#cours">Reprendre le cours</a>
+          </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="grid grid--4">
+          <div class="stat reveal"><div class="stat__label">Modules terminés</div><div class="stat__value">12</div><div class="stat__trend up">+3 cette semaine</div></div>
+          <div class="stat reveal"><div class="stat__label">Série en cours</div><div class="stat__value">7 j</div><div class="stat__trend up">Continue comme ça</div></div>
+          <div class="stat reveal"><div class="stat__label">Projets réalisés</div><div class="stat__value">4</div><div class="stat__trend up">+1 ce mois</div></div>
+          <div class="stat reveal"><div class="stat__label">Badges</div><div class="stat__value">9</div><div class="stat__trend">Prochain : Créateur</div></div>
+        </div>
+
+        <!-- Progression + activité -->
+        <div class="grid grid--2" style="margin-top: 26px; align-items: start">
+          <div class="card">
+            <div class="flex between items-center" style="margin-bottom: 18px"><h3 class="h-3 mb-0">Progression du parcours</h3><span class="chip">Ado · 15–21</span></div>
+            <div class="stack">
+              <div>
+                <div class="flex between" style="font-size: 14px; margin-bottom: 6px"><span>Fondamentaux de l'IA</span><b>100 %</b></div>
+                <div class="progress"><span style="width: 100%"></span></div>
+              </div>
+              <div>
+                <div class="flex between" style="font-size: 14px; margin-bottom: 6px"><span>Prompts efficaces</span><b>72 %</b></div>
+                <div class="progress"><span style="width: 72%"></span></div>
+              </div>
+              <div>
+                <div class="flex between" style="font-size: 14px; margin-bottom: 6px"><span>Projets concrets</span><b>40 %</b></div>
+                <div class="progress"><span style="width: 40%"></span></div>
+              </div>
+              <div>
+                <div class="flex between" style="font-size: 14px; margin-bottom: 6px"><span>Usage responsable</span><b>15 %</b></div>
+                <div class="progress"><span style="width: 15%"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="h-3" style="margin-bottom: 8px">Activité des 6 dernières semaines</h3>
+            <p class="muted" style="font-size: 13px; margin-bottom: 18px">Modules complétés par semaine</p>
+            <div class="bars">
+              <div class="bar" style="height: 35%"><span>2</span><small>S1</small></div>
+              <div class="bar" style="height: 55%"><span>3</span><small>S2</small></div>
+              <div class="bar" style="height: 40%"><span>2</span><small>S3</small></div>
+              <div class="bar" style="height: 80%"><span>5</span><small>S4</small></div>
+              <div class="bar" style="height: 65%"><span>4</span><small>S5</small></div>
+              <div class="bar" style="height: 95%"><span>6</span><small>S6</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prochaine étape suggérée par Félix -->
+        <div class="card reveal" style="margin-top: 26px; background: var(--warm-tint); border-color: var(--warm-tint-2)">
+          <div class="flex gap items-center between flex-wrap">
+            <div>
+              <p class="eyebrow">Suggéré par Félix</p>
+              <h3 class="h-3">Prochaine étape : « Construire ton premier mini-projet »</h3>
+              <p class="muted">Tu as les bases. On passe à la pratique avec un projet guidé pas à pas.</p>
+            </div>
+            <a class="btn btn--primary" href="index.html#cours">Commencer le module</a>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

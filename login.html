@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion — OptimizeMyLife</title>
+    <meta name="description" content="Connectez-vous à OptimizeMyLife pour accéder à vos parcours, au cockpit et à Félix, votre mentor IA." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="auth">
+      <!-- Formulaire -->
+      <section class="auth__form">
+        <div class="auth__form-inner">
+          <a class="brand" href="index.html" style="margin-bottom: 28px">
+            <span class="brand__badge felix"><img src="assets/felix/felix-badge.png" alt="Félix" /><span class="felix__ph" aria-hidden="true"><b>F</b></span></span>
+            Optimize<b>MyLife</b>
+          </a>
+          <h1 class="h-2" style="margin-bottom: 6px">Bon retour parmi nous</h1>
+          <p class="muted" style="margin-bottom: 26px">Connectez-vous pour retrouver vos parcours et Félix.</p>
+
+          <form onsubmit="return false">
+            <div class="field">
+              <label for="email">Adresse e-mail</label>
+              <input id="email" type="email" placeholder="vous@exemple.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="pwd">Mot de passe</label>
+              <input id="pwd" type="password" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+            <div class="field">
+              <label for="profil">Profil</label>
+              <select id="profil">
+                <option>Parent / administrateur</option>
+                <option>Apprenant Junior (9–14)</option>
+                <option>Apprenant Ado (15–21)</option>
+                <option>Adulte / Business</option>
+              </select>
+            </div>
+            <a class="btn btn--primary btn--block" href="cockpit.html">Se connecter</a>
+          </form>
+
+          <p class="muted" style="font-size: 13px; margin-top: 18px; text-align: center">
+            Pas encore de compte ? <a href="produits/package-cours.html" style="color: var(--warm-dark); font-weight: 700">Découvrir les parcours</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Volet latéral : modèles / références -->
+      <section class="auth__side">
+        <div class="felix" style="width: 110px; margin-bottom: 22px">
+          <img src="assets/felix/felix-wave.png" alt="Félix vous accueille" />
+          <span class="felix__ph" aria-hidden="true"><b>Félix</b></span>
+        </div>
+        <p class="eyebrow" style="color: var(--warm-light)">À l'intérieur de votre espace</p>
+        <h2 class="h-2" style="color: #fff; margin-bottom: 10px">Félix s'appuie sur des modèles d'IA de référence</h2>
+        <p style="color: rgba(255,255,255,0.75); margin-bottom: 24px; max-width: 46ch">
+          Votre espace vous donne accès à un mentor connecté aux meilleurs modèles du marché,
+          sélectionnés selon la tâche — toujours de façon encadrée et adaptée à l'âge.
+        </p>
+
+        <div class="stack-sm">
+          <div class="model-card"><span class="ico">C</span><div><b>Modèles de raisonnement avancés</b><p>Pour expliquer, accompagner et corriger les exercices.</p></div></div>
+          <div class="model-card"><span class="ico">🖼️</span><div><b>Modèles créatifs</b><p>Pour les projets d'images, de design et d'idéation.</p></div></div>
+          <div class="model-card"><span class="ico">⚡</span><div><b>Modèles rapides</b><p>Pour les réponses immédiates et l'aide en temps réel.</p></div></div>
+        </div>
+
+        <p style="color: rgba(255,255,255,0.55); font-size: 12.5px; margin-top: 22px; max-width: 44ch">
+          Le choix des modèles évolue avec l'industrie. Félix utilise toujours l'outil le plus adapté à votre besoin, dans un cadre sécurisé.
+        </p>
+      </section>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
