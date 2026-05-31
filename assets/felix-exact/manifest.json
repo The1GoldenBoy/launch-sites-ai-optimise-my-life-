@@ -1,0 +1,107 @@
+{
+  "source_pack": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact",
+  "rule": "Felix not redrawn. Exact assets copied byte-for-byte. Backgrounds white.",
+  "copy_destination_repo_rel": "assets/felix-exact",
+  "approval_status": "Source pack approved (Empire OS web-image-pack-felix-exact). Public publish still requires Max approval for copy, claims, pricing, and outreach.",
+  "files": [
+    {
+      "repo_path": "assets/felix-exact/01-hero-landing-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/01-hero-landing-felix-exact-white.jpg",
+      "bytes": 302473,
+      "sha256": "bf3f065018cde6519a36443e84e9e621e4bb1031a8887288946753605e7dedef",
+      "source_sha256": "bf3f065018cde6519a36443e84e9e621e4bb1031a8887288946753605e7dedef",
+      "match": true,
+      "intended_section": "Hero section \u2014 landing"
+    },
+    {
+      "repo_path": "assets/felix-exact/02-product-box-junior-exact-felix-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/02-product-box-junior-exact-felix-white.jpg",
+      "bytes": 385905,
+      "sha256": "640b2c2069722952636645f52bd317c22f6567797dbe80ec9e39fc419f113fcd",
+      "source_sha256": "640b2c2069722952636645f52bd317c22f6567797dbe80ec9e39fc419f113fcd",
+      "match": true,
+      "intended_section": "Product box (Junior path card)"
+    },
+    {
+      "repo_path": "assets/felix-exact/03-course-card-junior-exact-felix-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/03-course-card-junior-exact-felix-white.jpg",
+      "bytes": 177538,
+      "sha256": "ce4c0e46dbd3f2827e82eb400096c8c82ea0d73f96160f36915ad0357f4b12c2",
+      "source_sha256": "ce4c0e46dbd3f2827e82eb400096c8c82ea0d73f96160f36915ad0357f4b12c2",
+      "match": true,
+      "intended_section": "Course card variant"
+    },
+    {
+      "repo_path": "assets/felix-exact/04-course-lineup-junior-teen-adult-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/04-course-lineup-junior-teen-adult-felix-exact-white.jpg",
+      "bytes": 281840,
+      "sha256": "c945db0ea0bb2957606bbb5c959b0c4c6adceff2501117b969be9eb52a01d49d",
+      "source_sha256": "c945db0ea0bb2957606bbb5c959b0c4c6adceff2501117b969be9eb52a01d49d",
+      "match": true,
+      "intended_section": "Path lineup Junior / Ado / Adulte"
+    },
+    {
+      "repo_path": "assets/felix-exact/05-felix-ai-live-feature-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/05-felix-ai-live-feature-exact-white.jpg",
+      "bytes": 303225,
+      "sha256": "fb28bdb64d9288756f46e053c224dc4d95f3b121b51470e95c9df09de8dd82a1",
+      "source_sha256": "fb28bdb64d9288756f46e053c224dc4d95f3b121b51470e95c9df09de8dd82a1",
+      "match": true,
+      "intended_section": "Felix Live / mentor block"
+    },
+    {
+      "repo_path": "assets/felix-exact/06-parent-trust-section-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/06-parent-trust-section-felix-exact-white.jpg",
+      "bytes": 165017,
+      "sha256": "475cee63de0593f103979d1c3224060bb4a06fb5ffa069f9722bb0d70ad98dc8",
+      "source_sha256": "475cee63de0593f103979d1c3224060bb4a06fb5ffa069f9722bb0d70ad98dc8",
+      "match": true,
+      "intended_section": "Parent Trust Center section"
+    },
+    {
+      "repo_path": "assets/felix-exact/07-project-modules-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/07-project-modules-felix-exact-white.jpg",
+      "bytes": 352250,
+      "sha256": "d0c53798339b05b30884fb3b7a99f7a58c46a3baa0fe4acbbb3f43454db4a8f5",
+      "source_sha256": "d0c53798339b05b30884fb3b7a99f7a58c46a3baa0fe4acbbb3f43454db4a8f5",
+      "match": true,
+      "intended_section": "Agent Lab / project modules"
+    },
+    {
+      "repo_path": "assets/felix-exact/08-checkout-offer-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/08-checkout-offer-felix-exact-white.jpg",
+      "bytes": 220843,
+      "sha256": "a372e022a0cdf50c407fe858ca6fdf515ef757c81a4ad37d71443461801daf87",
+      "source_sha256": "a372e022a0cdf50c407fe858ca6fdf515ef757c81a4ad37d71443461801daf87",
+      "match": true,
+      "intended_section": "Offer / pricing preview (placeholder copy)"
+    },
+    {
+      "repo_path": "assets/felix-exact/09-social-square-junior-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/09-social-square-junior-felix-exact-white.jpg",
+      "bytes": 204361,
+      "sha256": "840c8f26b41da23e21843f0d4391e808b0ab2c7efcead5d6eaf83bf31775efdf",
+      "source_sha256": "840c8f26b41da23e21843f0d4391e808b0ab2c7efcead5d6eaf83bf31775efdf",
+      "match": true,
+      "intended_section": "Square social/preview image"
+    },
+    {
+      "repo_path": "assets/felix-exact/10-footer-cta-banner-felix-exact-white.jpg",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/10-footer-cta-banner-felix-exact-white.jpg",
+      "bytes": 177711,
+      "sha256": "667e07243d54fc7275cbf78c2e6a4651377fab37a1a3ff7af4cdf7a2e06503ad",
+      "source_sha256": "667e07243d54fc7275cbf78c2e6a4651377fab37a1a3ff7af4cdf7a2e06503ad",
+      "match": true,
+      "intended_section": "Final CTA / footer banner"
+    },
+    {
+      "repo_path": "assets/felix-exact/00-source-felix-crop-exact.png",
+      "source_path": "/mnt/c/Users/MAX/Documents/Empire OS/01_Projects/OptimizeMyLife/assets/web-image-pack-felix-exact/00-source-felix-crop-exact.png",
+      "bytes": 329348,
+      "sha256": "5e5d608b5719fcabf66f32251c6ee00f66385b2dbc62ea659fd5fdf9b22a63af",
+      "source_sha256": "5e5d608b5719fcabf66f32251c6ee00f66385b2dbc62ea659fd5fdf9b22a63af",
+      "match": true,
+      "intended_section": "Standalone Felix crop (login + cockpit avatar)"
+    }
+  ]
+}
