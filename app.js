@@ -8,16 +8,20 @@
   // -------- Mobile nav toggle --------
   var burger = document.getElementById("navBurger");
   var mobile = document.getElementById("navMobile");
+  var nav = document.querySelector(".nav");
+  function setNavOpen(open) {
+    if (!mobile || !burger) return;
+    mobile.hidden = !open;
+    burger.setAttribute("aria-expanded", String(open));
+    if (nav) nav.setAttribute("data-mobile-open", String(open));
+  }
   if (burger && mobile) {
     burger.addEventListener("click", function () {
-      var open = !mobile.hidden;
-      mobile.hidden = open;
-      burger.setAttribute("aria-expanded", String(!open));
+      setNavOpen(mobile.hidden);
     });
     mobile.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
-        mobile.hidden = true;
-        burger.setAttribute("aria-expanded", "false");
+        setNavOpen(false);
       });
     });
   }
