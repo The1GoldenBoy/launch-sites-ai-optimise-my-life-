@@ -135,10 +135,14 @@ a { color: inherit; }
 }
 .nav__burger span { width: 18px; height: 2px; background: var(--ink); border-radius: 2px; }
 
+.nav__mobile[hidden] {
+  display: none !important;
+}
+
 .nav__mobile {
   display: flex; flex-direction: column; gap: 4px;
   padding: 8px var(--gutter) 18px;
-  border-top: 1px solid var(--line-2);
+  border-top: 1px solid var(--line);
   background: var(--paper);
 }
 .nav__mobile a {
