@@ -3,28 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="OptimizeMyLife — Volume 1 avec Félix, le cours IA premium pour les jeunes de 9 à 14 ans. Prix de lancement : 79 $." />
+    <meta name="description" content="OptimizeMyLife — Volume 1 avec Félix. Le premier vrai parcours IA pour les jeunes de 9 à 14 ans. 79 $ CAD, sans abonnement." />
     <meta name="theme-color" content="#f1750e" />
-    <title>OptimizeMyLife — Volume 1 avec Félix · Jeunes 9–14 ans · 79 $</title>
+    <title>OptimizeMyLife — Volume 1 avec Félix · 9–14 ans · 79 $</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=20260531-v2-premium" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
+    <link rel="stylesheet" href="styles.css?v=20260531-v3-masterpiece" />
     <link rel="icon" type="image/png" href="assets/felix-exact/00-source-felix-crop-exact.png" />
   </head>
   <body data-page="public">
     <a class="skip-link" href="#start">Aller au contenu</a>
 
     <!-- ============================================== -->
-    <!-- PROTOTYPE BANNER                                -->
+    <!-- STATUS RIBBON · refined, single hairline strip   -->
     <!-- ============================================== -->
-    <div class="proto-banner" role="status" aria-live="polite">
-      <span class="proto-banner__dot" aria-hidden="true"></span>
-      Prototype visuel · Volume 1 pour les jeunes de 9 à 14 ans · 79 $ · connexion réelle et données à venir · en attente d'approbation Max pour publication.
+    <div class="status-ribbon" role="status" aria-live="polite">
+      <div class="status-ribbon__inner">
+        <span class="status-ribbon__pulse" aria-hidden="true"></span>
+        <span class="status-ribbon__label">Prototype visuel</span>
+        <span class="status-ribbon__sep" aria-hidden="true"></span>
+        <span class="status-ribbon__msg">Volume 1 · 9–14 ans · 79 $ — connexion et paiement réels en attente d'approbation Max.</span>
+      </div>
     </div>
 
     <!-- ============================================== -->
-    <!-- TOP NAV                                         -->
+    <!-- TOP NAV · 4 links + price + single CTA           -->
     <!-- ============================================== -->
     <header class="nav" id="top">
       <div class="nav__inner">
@@ -38,21 +42,17 @@
           </span>
         </a>
         <nav class="nav__links" aria-label="Navigation principale">
-          <a href="#start">Accueil</a>
-          <a href="#felix">Félix</a>
           <a href="#volume1">Volume 1</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#app">App</a>
-          <a href="#rapport">Rapport</a>
-          <a href="#confiance">Confiance</a>
+          <a href="#felix">Félix</a>
+          <a href="#app">L'app</a>
+          <a href="#faq">Questions</a>
         </nav>
         <div class="nav__cta">
-          <span class="nav__price" aria-label="Prix Volume 1 : 79 dollars">
-            <span class="nav__price-dot" aria-hidden="true"></span>
-            Volume 1 · <strong>79 $</strong>
+          <span class="nav__price" aria-label="Prix Volume 1 : 79 dollars canadiens">
+            <span class="nav__price-mark" aria-hidden="true">V1</span>
+            <span class="nav__price-text">9–14 ans · <strong>79 $</strong></span>
           </span>
-          <a class="btn btn--ghost btn--sm" href="#connexion">Connexion</a>
-          <a class="btn btn--primary btn--sm" href="#volume1">Voir le Volume 1</a>
+          <a class="btn btn--primary btn--sm" href="#volume1">Réserver</a>
         </div>
         <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobile">
           <span></span><span></span><span></span>
@@ -60,64 +60,84 @@
       </div>
       <nav class="nav__mobile" id="navMobile" aria-label="Navigation mobile" hidden>
         <span class="nav__mobile-price">
+          <span class="nav__price-mark" aria-hidden="true">V1</span>
           Volume 1 · 9–14 ans · <strong>79 $</strong>
         </span>
-        <a href="#start">Accueil</a>
-        <a href="#felix">Félix</a>
         <a href="#volume1">Volume 1</a>
-        <a href="#parcours">Parcours</a>
-        <a href="#app">App</a>
-        <a href="#rapport">Rapport parent</a>
-        <a href="#confiance">Confiance</a>
+        <a href="#felix">Félix</a>
+        <a href="#app">L'app</a>
+        <a href="#confiance">Confiance parent</a>
+        <a href="#faq">Questions</a>
         <a href="#connexion">Connexion</a>
-        <a class="btn btn--primary" href="#volume1">Voir le Volume 1 — 79 $</a>
+        <a class="btn btn--primary" href="#volume1">Réserver le Volume 1 — 79 $</a>
       </nav>
     </header>
 
     <main>
 
       <!-- ============================================== -->
-      <!-- HERO                                            -->
+      <!-- HERO · editorial layered composition             -->
       <!-- ============================================== -->
       <section class="hero" id="start">
         <div class="hero__bg" aria-hidden="true"></div>
+
         <div class="hero__inner container container--wide">
           <div class="hero__copy">
-            <span class="hero__pricechip">
-              <span class="hero__pricechip-mark" aria-hidden="true">V1</span>
-              Volume 1 · 9 à 14 ans
-              <span class="hero__pricechip-sep" aria-hidden="true"></span>
-              <strong>79 $</strong>
+            <span class="hero__eyebrow">
+              <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+              Conçu au Québec · pour les familles
             </span>
             <h1 class="hero__title">
-              Apprendre l'IA <span class="serif-italic">comme on apprend à penser&nbsp;</span><span class="hero__title-accent gradient-text">— avec Félix, pour les 9 à 14 ans.</span>
+              Le premier vrai <span class="serif-italic">parcours IA</span>
+              <span class="hero__title-break">pour votre jeune de</span>
+              <span class="hero__title-accent">9 à 14 ans.</span>
             </h1>
             <p class="hero__sub">
-              Le <strong>Volume 1</strong> est un parcours guidé pour votre jeune&nbsp;: comprendre l'IA, choisir une vraie priorité, créer un mini-projet utile et garder un repère clair côté parent. <strong>79 $</strong>, sans abonnement.
+              <strong>Volume 1 avec Félix</strong> — sept missions guidées, un cockpit qui fait sens, un Agent Lab pour bâtir un mini-projet utile et un repère parent honnête. Un cours complet pensé pour cet âge-charnière, sans abonnement.
             </p>
             <div class="hero__ctas">
-              <a class="btn btn--primary btn--lg" href="#volume1">Voir le Volume 1 — 79 $ <span class="btn__arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn--primary btn--lg" href="#volume1">
+                <span>Voir le Volume 1 — 79 $</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
               <a class="btn btn--ghost btn--lg" href="#felix">Découvrir Félix</a>
             </div>
-            <p class="hero__micro">
-              Aucun résultat garanti. Pas une thérapie, pas un remplacement scolaire, pas une promesse de revenu. Un parcours structuré pour apprendre à utiliser l'IA de façon pratique et responsable.
-            </p>
             <ul class="hero__trust" aria-label="Repères de confiance">
-              <li><span aria-hidden="true">✦</span> Vouvoiement parents</li>
-              <li><span aria-hidden="true">✦</span> Tutoiement jeunes</li>
-              <li><span aria-hidden="true">✦</span> Repères parent visibles</li>
-              <li><span aria-hidden="true">✦</span> Conçu au Québec</li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                Sans abonnement
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                Rapport parent clair
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                Limites de Félix transparentes
+              </li>
             </ul>
+            <p class="hero__micro">Aucun résultat scolaire, médical ou financier garanti. Félix est un mentor IA structuré&nbsp;: il ne remplace ni parents, ni enseignants, ni professionnels.</p>
           </div>
 
-          <div class="hero__visual">
+          <div class="hero__visual" aria-label="Aperçu produit Volume 1 avec Félix">
             <figure class="hero__felix">
-              <span class="hero__badge" aria-hidden="true">Volume 1 · 79 $</span>
               <img src="assets/felix-exact/01-hero-landing-felix-exact-white.jpg"
-                   alt="Félix, mentor IA d'OptimizeMyLife, présenté avec le coffret Volume 1."
+                   alt="Félix, mentor IA d'OptimizeMyLife, présente le Volume 1 pour les jeunes de 9 à 14 ans."
                    width="1100" height="650" fetchpriority="high" />
+              <span class="hero__felix-tag" aria-hidden="true">
+                <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="26" height="26" />
+                Félix · mentor IA
+              </span>
+              <span class="hero__felix-pulse" aria-hidden="true"></span>
             </figure>
-            <div class="hero__device" aria-label="Aperçu de l'app sur mobile">
+
+            <aside class="hero__stamp" aria-hidden="true">
+              <span class="hero__stamp-eyebrow">Volume 1 · CAD</span>
+              <span class="hero__stamp-price">79<span>$</span></span>
+              <span class="hero__stamp-tail">9–14 ans · sans abonnement</span>
+            </aside>
+
+            <aside class="hero__device" aria-label="Aperçu cockpit sur mobile">
               <div class="phone">
                 <div class="phone__notch" aria-hidden="true"></div>
                 <div class="phone__screen">
@@ -126,87 +146,197 @@
                       <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="36" height="36" />
                       <div>
                         <strong>Bonjour Léa</strong>
-                        <span>Félix a une mission pour aujourd'hui.</span>
+                        <span>Jour 3 · Habit Loop</span>
                       </div>
+                      <span class="cockpit-mini__bell" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                      </span>
                     </header>
-                    <article class="cockpit-mini__card">
-                      <span class="tag tag--warm">Mission du jour</span>
-                      <h3>Choisir une vraie priorité (10 min)</h3>
-                      <p>Félix t'aide à enlever un obstacle concret.</p>
-                      <div class="cockpit-mini__progress"><span style="width:46%"></span></div>
-                    </article>
                     <article class="cockpit-mini__card cockpit-mini__card--alt">
+                      <span class="tag tag--warm">Mission du jour</span>
+                      <h3>Choisir une vraie priorité</h3>
+                      <p>10 min avec Félix pour enlever un obstacle.</p>
+                      <div class="cockpit-mini__progress" aria-label="Progression 46 %"><span style="width:46%"></span></div>
+                      <button class="cockpit-mini__cta" type="button">Commencer →</button>
+                    </article>
+                    <article class="cockpit-mini__card">
                       <span class="tag">Projet en cours</span>
-                      <h3>Projet de sciences</h3>
+                      <h3>Projet sciences</h3>
                       <p>3 prochaines étapes prêtes.</p>
                     </article>
                   </div>
                 </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
-      </section>
 
-      <!-- ============================================== -->
-      <!-- VALUE RAIL                                      -->
-      <!-- ============================================== -->
-      <section class="rail" aria-label="Piliers du parcours">
-        <div class="container container--wide">
-          <ul class="rail__inner" style="list-style:none; padding:0; margin:0;">
-            <li class="rail__cell">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <strong>Objectifs</strong><span>Une vraie priorité par jour</span>
-            </li>
-            <li class="rail__cell">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-              <strong>Focus</strong><span>Réduire le bruit, agir 10 min</span>
-            </li>
-            <li class="rail__cell">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
-              <strong>Projets</strong><span>De l'idée à l'étape concrète</span>
-            </li>
-            <li class="rail__cell">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
-              <strong>Habitudes</strong><span>Petites boucles maintenables</span>
-            </li>
-            <li class="rail__cell">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.8 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg>
-              <strong>Confiance</strong><span>Un script utile au bon moment</span>
-            </li>
-            <li class="rail__cell">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87M17 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <strong>Parent</strong><span>Check-in clair, pas surveillance</span>
-            </li>
+        <!-- Hero marquee · what the parent feels in 5 seconds -->
+        <div class="hero__marquee container container--wide">
+          <ul class="hero__marquee-list">
+            <li><strong>7</strong> missions guidées</li>
+            <li><strong>1</strong> app cockpit (mobile + desktop)</li>
+            <li><strong>1</strong> Agent Lab · mini-projet utile</li>
+            <li><strong>1</strong> rapport parent hebdo</li>
+            <li><strong>1</strong> mentor IA — Félix</li>
+            <li><strong>0</strong> abonnement</li>
           </ul>
         </div>
       </section>
 
       <!-- ============================================== -->
-      <!-- FÉLIX MENTOR / VIDEO BLOCK                      -->
+      <!-- WHAT'S INSIDE VOLUME 1 · 7 missions + package    -->
+      <!-- ============================================== -->
+      <section class="inside" id="volume1">
+        <div class="container container--wide">
+          <header class="section-head section-head--center">
+            <p class="eyebrow">Volume 1 · 9 à 14 ans</p>
+            <h2>Ce que votre jeune obtient pour <span class="gradient-text">79 $.</span></h2>
+            <p class="section-sub">Un parcours complet, pensé bout-en-bout&nbsp;: comprendre l'IA, choisir une priorité, créer un projet utile, et garder un repère clair côté parent. Tout est inclus, sans abonnement.</p>
+          </header>
+
+          <div class="inside__grid">
+            <article class="inside__feature inside__feature--missions">
+              <header>
+                <span class="inside__num">01</span>
+                <span class="tag tag--warm">7 jours guidés</span>
+              </header>
+              <h3>7 missions avec Félix</h3>
+              <p>Une mission par jour, 10 à 15 minutes. Félix introduit, accompagne, célèbre la prochaine action concrète.</p>
+              <ol class="mission-list">
+                <li><span class="mission-list__num">1</span><div><strong>Carte de vie</strong><span>Voir clair sur la semaine.</span></div></li>
+                <li><span class="mission-list__num">2</span><div><strong>Focus Reset</strong><span>Choisir une vraie priorité.</span></div></li>
+                <li><span class="mission-list__num">3</span><div><strong>Habit Loop</strong><span>Construire une micro-habitude.</span></div></li>
+                <li><span class="mission-list__num">4</span><div><strong>Project Plan</strong><span>De l'idée aux 3 prochaines étapes.</span></div></li>
+                <li><span class="mission-list__num">5</span><div><strong>Confidence Script</strong><span>Une phrase utile au bon moment.</span></div></li>
+                <li><span class="mission-list__num">6</span><div><strong>Agent Lab Build</strong><span>Construire le mini-projet.</span></div></li>
+                <li><span class="mission-list__num">7</span><div><strong>Check-in &amp; Share</strong><span>Partager au parent, garder une trace.</span></div></li>
+              </ol>
+            </article>
+
+            <article class="inside__feature inside__feature--box">
+              <header>
+                <span class="inside__num">02</span>
+                <span class="tag tag--soft">Coffret numérique</span>
+              </header>
+              <h3>Le coffret Volume 1</h3>
+              <p>Un seul prix. Un accès Volume 1 complet, sans abonnement.</p>
+              <figure class="inside__media">
+                <img src="assets/felix-exact/02-product-box-junior-exact-felix-white.jpg"
+                     alt="Coffret numérique Volume 1 avec Félix."
+                     width="800" height="1000" loading="lazy" />
+                <span class="inside__stamp" aria-hidden="true">
+                  <strong>79 $</strong>
+                  <span>CAD</span>
+                </span>
+              </figure>
+              <ul class="inside__pkg">
+                <li>App cockpit · 9–14 ans</li>
+                <li>Agent Lab · mini-projet</li>
+                <li>Rapport parent hebdo</li>
+                <li>Mentor IA — Félix</li>
+              </ul>
+            </article>
+
+            <article class="inside__feature inside__feature--app">
+              <header>
+                <span class="inside__num">03</span>
+                <span class="tag tag--blue">Cockpit du jour</span>
+              </header>
+              <h3>Une app qui fait sens</h3>
+              <p>Mobile et desktop. Mission du jour, parcours, mentor Félix, rapport parent — tout est connecté.</p>
+              <div class="inside__app">
+                <div class="inside__app-row">
+                  <div class="inside__app-card">
+                    <span class="tag tag--warm">Aujourd'hui</span>
+                    <strong>10 min · priorité</strong>
+                    <span class="muted">Félix t'accompagne</span>
+                    <div class="bar bar--mini"><span style="width:42%"></span></div>
+                  </div>
+                  <div class="inside__app-card inside__app-card--alt">
+                    <span class="tag">Streak</span>
+                    <strong>3 jours</strong>
+                    <span class="muted">Habit Loop</span>
+                  </div>
+                </div>
+                <div class="inside__app-row">
+                  <div class="inside__app-card">
+                    <span class="tag tag--blue">Projet</span>
+                    <strong>Sciences</strong>
+                    <span class="muted">3 prochaines étapes prêtes</span>
+                  </div>
+                  <div class="inside__app-card inside__app-card--alt">
+                    <span class="tag tag--soft">Check-in</span>
+                    <strong>Vendredi</strong>
+                    <span class="muted">3 questions calmes</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="inside__feature inside__feature--parent">
+              <header>
+                <span class="inside__num">04</span>
+                <span class="tag tag--green">Rapport parent</span>
+              </header>
+              <h3>Un repère parent honnête</h3>
+              <p>Chaque vendredi, une page calme et claire. Progression, projet en cours, prochaine suggestion. Pas de surveillance temps réel.</p>
+              <div class="inside__report">
+                <header class="inside__report-head">
+                  <div>
+                    <strong>Léa · sem. du 26 mai</strong>
+                    <span>Volume 1 · Jour 4 / 7</span>
+                  </div>
+                  <span class="badge badge--ok">En route</span>
+                </header>
+                <div class="inside__report-row">
+                  <span>Progression</span>
+                  <div class="bar"><span style="width:57%"></span></div>
+                </div>
+                <div class="inside__report-row inside__report-row--text">
+                  <span>Projet</span>
+                  <p>Sciences — plan posé, 2 étapes faites.</p>
+                </div>
+                <div class="inside__report-row inside__report-row--text">
+                  <span>Suggestion</span>
+                  <p>Check-in vendredi soir, 5 min. 3 questions préparées.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="inside__cta">
+            <div>
+              <p class="eyebrow eyebrow--ink">Le prix · 79 $ CAD</p>
+              <h3>Un seul achat. Pas d'abonnement. Pas de frais cachés.</h3>
+              <p>Le Volume 1 ouvre l'accès au parcours complet pour votre jeune de 9 à 14 ans. Les futurs volumes (Ado, Adulte) seront proposés séparément.</p>
+            </div>
+            <div class="inside__cta-actions">
+              <span class="inside__cta-price">79<span class="inside__cta-price-cur">$</span><small>CAD · Volume 1</small></span>
+              <a class="btn btn--primary btn--lg" href="#connexion">
+                <span>Réserver l'accès</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <span class="inside__cta-note">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                Paiement réel non activé dans le prototype.
+              </span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- FÉLIX MENTOR · video card + live chat preview    -->
       <!-- ============================================== -->
       <section class="felix" id="felix">
+        <div class="felix__bg" aria-hidden="true"></div>
         <div class="container felix__inner">
-          <div class="felix__media">
-            <figure class="video-card" role="group" aria-label="Aperçu mentor Félix">
-              <img src="assets/felix-exact/05-felix-ai-live-feature-exact-white.jpg"
-                   alt="Félix présente une session mentor avec un écran d'app."
-                   width="1100" height="650" loading="lazy" />
-              <span class="video-card__felix" aria-hidden="true">
-                <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="26" height="26" />
-                Félix · mentor
-              </span>
-              <button class="video-card__play" type="button" aria-label="Lecture (aperçu — vidéo à venir)">
-                <span aria-hidden="true">▶</span>
-              </button>
-              <figcaption class="video-card__caption">Mentor moment · 1 min 20 (aperçu)</figcaption>
-            </figure>
-          </div>
           <div class="felix__copy">
-            <p class="eyebrow eyebrow--blue">Mentor IA, pas chatbot anonyme</p>
+            <p class="eyebrow eyebrow--blue">Mentor IA, pas chatbot</p>
             <h2>Félix parle directement à votre jeune — <span class="gradient-text">calme, clair, encourageant.</span></h2>
             <p class="lede">
-              Félix pose de meilleures questions, organise les idées, propose une petite action et invite à un check-in parent quand c'est utile. <strong>Pas de promesses magiques.</strong> Une présence chaleureuse, transparente et structurée — pensée pour les 9 à 14 ans.
+              Félix pose de meilleures questions, organise les idées, propose une petite action, et invite à un check-in parent quand c'est utile. Pas de promesses magiques. Une présence chaleureuse, transparente et structurée — pensée pour les 9 à 14 ans.
             </p>
             <blockquote class="felix__quote">
               « Petite vérité de renard&nbsp;: paniquer n'est pas une stratégie. Faire un plan, oui. »
@@ -218,165 +348,47 @@
               <li>Encourage l'action, pas la dépendance</li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- VOLUME 1 — DEDICATED PRODUCT SECTION            -->
-      <!-- ============================================== -->
-      <section class="volume" id="volume1">
-        <div class="container volume__inner">
-          <figure class="volume__media">
-            <img src="assets/felix-exact/02-product-box-junior-exact-felix-white.jpg"
-                 alt="Coffret Volume 1 d'OptimizeMyLife avec Félix."
-                 width="800" height="1000" loading="lazy" />
-            <div class="volume__stamp" aria-hidden="true">
-              <strong>79 $</strong>
-              <span>Volume 1</span>
+          <div class="felix__media">
+            <figure class="video-card" role="group" aria-label="Aperçu mentor Félix">
+              <img src="assets/felix-exact/05-felix-ai-live-feature-exact-white.jpg"
+                   alt="Félix présente une session mentor à l'écran."
+                   width="1100" height="650" loading="lazy" />
+              <span class="video-card__felix" aria-hidden="true">
+                <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="26" height="26" />
+                Félix · mentor IA
+              </span>
+              <button class="video-card__play" type="button" aria-label="Lecture (aperçu — vidéo à venir)">
+                <span aria-hidden="true">▶</span>
+              </button>
+              <figcaption class="video-card__caption">Mentor moment · aperçu — vidéo à venir</figcaption>
+            </figure>
+            <div class="felix__chat" aria-label="Aperçu d'un échange avec Félix">
+              <div class="felix__chat-bubble felix__chat-bubble--felix">
+                <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                <p>Tu veux qu'on regarde une priorité pour cette semaine&nbsp;? Une chose à la fois, c'est plus simple.</p>
+              </div>
+              <div class="felix__chat-bubble felix__chat-bubble--user">
+                <p>Je me sens dépassée par mon projet de sciences.</p>
+              </div>
+              <div class="felix__chat-bubble felix__chat-bubble--felix">
+                <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                <p>D'accord. On rétrécit le problème. Quelle première chose pourrais-tu faire en 10 minutes ?</p>
+              </div>
+              <span class="felix__chat-note">Aperçu visuel · chat IA non branché à ce stade.</span>
             </div>
-          </figure>
-          <div class="volume__copy">
-            <p class="eyebrow">Le coffret · 9 à 14 ans</p>
-            <h2>Volume 1 — <span class="gradient-text">le premier vrai parcours IA pour votre jeune.</span></h2>
-            <p class="lede">
-              Un seul prix, un parcours complet&nbsp;: 7 missions guidées, l'app cockpit, l'Agent Lab et un rapport parent hebdomadaire. Pensé pour les jeunes de <strong>9 à 14 ans</strong>, avec Félix comme mentor à chaque étape.
-            </p>
-            <div class="volume__price" aria-label="Prix : 79 dollars canadiens">
-              <span class="volume__price-amount">79</span>
-              <span class="volume__price-cur">$</span>
-              <span class="volume__price-tail">CAD · accès Volume 1 · sans abonnement</span>
-            </div>
-            <ul class="volume__features">
-              <li><div><strong>7 missions guidées</strong><span>Une mission par jour, 10 à 15 minutes, avec Félix.</span></div></li>
-              <li><div><strong>App cockpit (mobile &amp; desktop)</strong><span>Mission du jour, parcours, projets, check-in parent.</span></div></li>
-              <li><div><strong>Agent Lab</strong><span>Construire un mini-projet utile, étape par étape.</span></div></li>
-              <li><div><strong>Rapport parent hebdomadaire</strong><span>Un repère clair, sans surveillance invasive.</span></div></li>
-              <li><div><strong>Repères de sécurité visibles</strong><span>Limites de Félix expliquées en mots simples.</span></div></li>
-            </ul>
-            <div class="volume__ctas">
-              <a class="btn btn--primary btn--lg" href="#connexion">Réserver l'accès — 79 $ <span class="btn__arrow" aria-hidden="true">→</span></a>
-              <a class="btn btn--ghost btn--lg" href="#app">Voir l'app en aperçu</a>
-            </div>
-            <span class="volume__guarantee">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-              Paiement réel non activé dans ce prototype
-            </span>
           </div>
         </div>
       </section>
 
       <!-- ============================================== -->
-      <!-- PARCOURS / PRODUCT CARDS                        -->
-      <!-- ============================================== -->
-      <section class="paths" id="parcours">
-        <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">Parcours guidés</p>
-            <h2>Le Volume 1 d'abord. <span class="gradient-text">D'autres parcours arrivent.</span></h2>
-            <p class="section-sub">Une même méthode pour toute la famille&nbsp;: voir clair, choisir une priorité, agir 10 minutes, recommencer. Le Volume 1 (9–14 ans) est le seul parcours actif aujourd'hui.</p>
-          </header>
-
-          <div class="paths__grid">
-            <article class="path-card path-card--featured">
-              <span class="path-card__ribbon path-card__ribbon--warm" aria-hidden="true">Actif · Volume 1</span>
-              <figure class="path-card__media">
-                <img src="assets/felix-exact/02-product-box-junior-exact-felix-white.jpg"
-                     alt="Coffret Volume 1 avec Félix."
-                     width="800" height="1000" loading="lazy" />
-              </figure>
-              <div class="path-card__body">
-                <span class="tag tag--warm">Volume 1 · 9 à 14 ans</span>
-                <h3 class="path-card__title">Mon premier système de vie avec l'IA</h3>
-                <p class="path-card__desc">Le cours principal pour les jeunes de 9 à 14 ans. Apprendre à voir clair, choisir, agir et créer un premier mini-projet utile avec Félix.</p>
-                <ul class="path-card__outcomes">
-                  <li>Carte de vie + une vraie priorité</li>
-                  <li>Mini-plan de projet + micro-habitude</li>
-                  <li>Check-in parent / mentor</li>
-                </ul>
-                <div class="path-card__price-row">
-                  <strong>79 $</strong><span>CAD · sans abonnement</span>
-                </div>
-                <a class="link-arrow" href="#volume1">Voir le Volume 1</a>
-              </div>
-            </article>
-
-            <article class="path-card">
-              <span class="path-card__ribbon" aria-hidden="true">À venir</span>
-              <figure class="path-card__media">
-                <img src="assets/felix-exact/03-course-card-junior-exact-felix-white.jpg"
-                     alt="Aperçu d'un parcours Ado à venir avec Félix."
-                     width="800" height="800" loading="lazy" />
-              </figure>
-              <div class="path-card__body">
-                <span class="tag tag--ink">Ado · à venir</span>
-                <h3 class="path-card__title">Apprendre, créer, présenter avec l'IA</h3>
-                <p class="path-card__desc">Une version ado pensée pour passer du test au système&nbsp;: projets scolaires, créatifs et personnels avec méthode et confiance.</p>
-                <ul class="path-card__outcomes">
-                  <li>Projet créatif ou scolaire abouti</li>
-                  <li>Script de confiance pour moments difficiles</li>
-                  <li>Plan de 30 jours réutilisable</li>
-                </ul>
-                <p class="path-card__pricing">Prix et date à confirmer. Le Volume 1 (79 $) reste le parcours actif.</p>
-              </div>
-            </article>
-
-            <article class="path-card">
-              <span class="path-card__ribbon" aria-hidden="true">À venir</span>
-              <figure class="path-card__media">
-                <img src="assets/felix-exact/07-project-modules-felix-exact-white.jpg"
-                     alt="Modules projet Agent Lab avec Félix."
-                     width="800" height="500" loading="lazy" />
-              </figure>
-              <div class="path-card__body">
-                <span class="tag tag--blue">Adulte · à venir</span>
-                <h3 class="path-card__title">De l'idée au premier petit projet encadré</h3>
-                <p class="path-card__desc">Pour les adultes qui veulent apprendre à créer de la valeur avec l'IA — éthique, encadré, sans promesse de revenu.</p>
-                <ul class="path-card__outcomes">
-                  <li>Choisir un problème utile</li>
-                  <li>Construire un mini-projet avec étapes</li>
-                  <li>Présenter à un pair ou mentor</li>
-                </ul>
-                <p class="path-card__pricing">Prix et date à confirmer. Le Volume 1 (79 $) reste le parcours actif.</p>
-              </div>
-            </article>
-
-            <article class="path-card path-card--famille">
-              <div class="path-card__body path-card__body--solo">
-                <div>
-                  <span class="tag tag--soft">Famille · aperçu futur</span>
-                  <h3 class="path-card__title" style="margin-top:8px;">Un repère commun pour parents et jeunes</h3>
-                  <p class="path-card__desc">Une vue partagée&nbsp;: ce que votre enfant apprend, ce qu'il prépare, les bons moments pour discuter — sans surveillance invasive.</p>
-                </div>
-                <div>
-                  <ul class="path-card__outcomes">
-                    <li>Rapport parent hebdomadaire</li>
-                    <li>Suggestions de conversations</li>
-                    <li>Repères de sécurité</li>
-                  </ul>
-                  <p class="path-card__pricing">Volume 1 confirmé&nbsp;: 79 $ pour les jeunes de 9 à 14 ans. Les packages famille restent à confirmer avant publication.</p>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <figure class="paths__lineup" id="parcours-detail">
-            <img src="assets/felix-exact/04-course-lineup-junior-teen-adult-felix-exact-white.jpg"
-                 alt="Alignement Junior, Ado, Adulte — Félix présente les trois parcours côte à côte."
-                 width="2200" height="1300" loading="lazy" />
-            <figcaption>Architecture future · Volume 1 (9 à 14 ans, 79 $) est prioritaire. Les versions Ado et Adulte arrivent plus tard.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <!-- ============================================== -->
-      <!-- APP PREVIEW (MOBILE + DESKTOP)                  -->
+      <!-- APP PREVIEW · desktop cockpit + mobile stack     -->
       <!-- ============================================== -->
       <section class="app-preview" id="app">
         <div class="container container--wide">
-          <header class="section-head">
-            <p class="eyebrow">Une vraie expérience produit</p>
-            <h2>L'app derrière le parcours — <span class="gradient-text">pensée mobile et desktop.</span></h2>
-            <p class="section-sub">Cockpit du jour, parcours d'apprentissage, mentor Félix Live, Agent Lab, rapport parent. Tout est connecté, rien n'est caché.</p>
+          <header class="section-head section-head--center">
+            <p class="eyebrow">L'app · cockpit + mentor + lab</p>
+            <h2>Une vraie expérience produit — <span class="gradient-text">mobile et desktop.</span></h2>
+            <p class="section-sub">Pensée pour cet âge précis. Calme à l'écran, claire dans la tête, transparente côté parent.</p>
           </header>
 
           <div class="app-preview__stage" id="app-preview">
@@ -386,20 +398,22 @@
                 <span class="desktop-mock__dot"></span>
                 <span class="desktop-mock__dot"></span>
                 <span class="desktop-mock__dot"></span>
-                <span class="desktop-mock__url">app.optimizemylife · cockpit</span>
+                <span class="desktop-mock__url">app.optimizemylife.io · cockpit</span>
               </div>
               <div class="desktop-mock__body">
                 <aside class="desktop-mock__sidebar">
                   <div class="side-brand">
-                    <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="28" height="28" />
+                    <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="30" height="30" />
                     <span>OptimizeMyLife</span>
                   </div>
-                  <a class="side-link side-link--active" href="#app-preview"><span aria-hidden="true">●</span> Cockpit</a>
-                  <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Parcours</a>
-                  <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Félix Live</a>
-                  <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Agent Lab</a>
-                  <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Rapport parent</a>
-                  <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Profil</a>
+                  <span class="side-section">Jeune</span>
+                  <a class="side-link side-link--active" href="#app-preview"><span class="side-link__dot" aria-hidden="true"></span> Cockpit</a>
+                  <a class="side-link" href="#app-preview"><span class="side-link__dot" aria-hidden="true"></span> Parcours</a>
+                  <a class="side-link" href="#app-preview"><span class="side-link__dot" aria-hidden="true"></span> Félix Live</a>
+                  <a class="side-link" href="#app-preview"><span class="side-link__dot" aria-hidden="true"></span> Agent Lab</a>
+                  <span class="side-section">Parent</span>
+                  <a class="side-link" href="#app-preview"><span class="side-link__dot" aria-hidden="true"></span> Rapport hebdo</a>
+                  <a class="side-link" href="#app-preview"><span class="side-link__dot" aria-hidden="true"></span> Confiance</a>
                   <div class="side-foot">
                     <span>Mode Aperçu</span>
                     <small>Connexion réelle à venir</small>
@@ -408,7 +422,7 @@
                 <section class="desktop-mock__main">
                   <header class="desktop-mock__topbar">
                     <div>
-                      <h3>Bonjour Léa 👋</h3>
+                      <h3>Bonjour Léa</h3>
                       <p>Félix a préparé ta journée. 10 minutes suffisent.</p>
                     </div>
                     <div class="topbar-actions">
@@ -418,30 +432,37 @@
                   </header>
                   <div class="dashgrid">
                     <article class="dashcard dashcard--big">
-                      <span class="tag tag--warm">Mission du jour</span>
-                      <h4>Choisir une vraie priorité (10 min)</h4>
+                      <header class="dashcard__head">
+                        <span class="tag tag--warm">Mission du jour</span>
+                        <span class="muted">10 min</span>
+                      </header>
+                      <h4>Choisir une vraie priorité</h4>
                       <p>Félix t'aide à enlever un obstacle concret de ta semaine.</p>
-                      <div class="dashcard__progress"><span style="width:42%"></span></div>
+                      <div class="dashcard__progress" aria-label="42 % terminé"><span style="width:42%"></span></div>
                       <div class="dashcard__row">
-                        <button class="btn btn--primary btn--sm" type="button">Commencer avec Félix</button>
-                        <span class="muted">3 étapes · 10 min</span>
+                        <button class="btn btn--primary btn--sm" type="button">Commencer avec Félix →</button>
+                        <span class="muted">3 étapes</span>
                       </div>
                     </article>
                     <article class="dashcard">
-                      <span class="tag">Parcours en cours</span>
-                      <h4>Volume 1 · 9–14 ans</h4>
-                      <p>3 / 7 jours · prochaine étape&nbsp;: Habit Loop.</p>
-                      <div class="dashcard__progress"><span style="width:43%"></span></div>
+                      <span class="tag">Parcours</span>
+                      <h4>Volume 1 · 3 / 7</h4>
+                      <p>Prochaine étape&nbsp;: Habit Loop</p>
+                      <div class="bar bar--mini"><span style="width:43%"></span></div>
                     </article>
                     <article class="dashcard">
                       <span class="tag tag--blue">Agent Lab</span>
                       <h4>Mini-projet sciences</h4>
-                      <p>Plan + 3 prochaines actions prêtes.</p>
+                      <p>Plan posé · 3 prochaines actions prêtes.</p>
                     </article>
                     <article class="dashcard">
                       <span class="tag tag--soft">Check-in parent</span>
-                      <h4>Suggéré pour vendredi</h4>
-                      <p>3 questions calmes, pas d'interrogatoire.</p>
+                      <h4>Suggéré vendredi</h4>
+                      <p>3 questions calmes — pas d'interrogatoire.</p>
+                    </article>
+                    <article class="dashcard dashcard--felix">
+                      <span class="tag tag--warm">Félix · message</span>
+                      <p>« Tu avances bien. Une chose à la fois suffit. »</p>
                     </article>
                   </div>
                 </section>
@@ -460,12 +481,20 @@
                         <strong>Bonjour Léa</strong>
                         <span>Jour 3 · Habit Loop</span>
                       </div>
+                      <span class="m-app__bell" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                      </span>
                     </div>
                     <article class="m-card m-card--hero">
-                      <span class="tag tag--warm">Aujourd'hui</span>
-                      <h4>10 minutes pour choisir une vraie priorité</h4>
+                      <span class="tag tag--warm">Aujourd'hui · 10 min</span>
+                      <h4>Choisir une vraie priorité</h4>
                       <p>Félix t'accompagne étape par étape.</p>
-                      <button class="btn btn--primary btn--block" type="button">Commencer</button>
+                      <div class="bar bar--mini"><span style="width:42%"></span></div>
+                      <button class="btn btn--primary btn--block btn--sm" type="button">Commencer</button>
+                    </article>
+                    <article class="m-card m-card--felix">
+                      <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="28" height="28" />
+                      <p>« Tu avances bien. Une chose à la fois suffit. »</p>
                     </article>
                     <div class="m-row">
                       <article class="m-card m-card--mini">
@@ -497,15 +526,10 @@
       </section>
 
       <!-- ============================================== -->
-      <!-- PARENT TRUST CENTER                             -->
+      <!-- PARENT TRUST + REPORT · paired editorial         -->
       <!-- ============================================== -->
       <section class="trust" id="confiance">
         <div class="container trust__inner">
-          <figure class="trust__media" style="margin:0;">
-            <img src="assets/felix-exact/06-parent-trust-section-felix-exact-white.jpg"
-                 alt="Félix présente la section confiance parent."
-                 width="1100" height="650" loading="lazy" />
-          </figure>
           <div class="trust__copy">
             <p class="eyebrow eyebrow--blue">Confiance parents</p>
             <h2>Pensé pour être <span class="gradient-text">visible, structuré et responsable.</span></h2>
@@ -514,113 +538,131 @@
             </p>
             <div class="trust__grid">
               <div class="trust__cell">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span class="trust__cell-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </span>
                 <h3>Ce que vous voyez</h3>
                 <p>Progrès, priorités de la semaine, notes de projet, suggestions de check-in.</p>
               </div>
               <div class="trust__cell">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+                <span class="trust__cell-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+                </span>
                 <h3>Limites claires</h3>
                 <p>Félix n'est ni thérapeute, ni enseignant, ni médecin. Pas de diagnostic, pas de promesse de note.</p>
               </div>
               <div class="trust__cell">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                <span class="trust__cell-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
                 <h3>Pas de secret</h3>
                 <p>L'expérience est conçue pour la transparence parent, pas pour des conversations cachées.</p>
               </div>
               <div class="trust__cell">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span class="trust__cell-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </span>
                 <h3>Données prudentes</h3>
-                <p>Le moins possible. Aucune garantie absolue de confidentialité ne sera promise sans preuves techniques.</p>
+                <p>Le moins possible. Aucune garantie absolue ne sera promise sans preuves techniques.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- ============================================== -->
-      <!-- PARENT REPORT LIGHT/DARK PREVIEW                -->
-      <!-- ============================================== -->
-      <section class="report" id="rapport">
-        <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">Rapport parent · aperçu</p>
-            <h2>Un repère hebdomadaire, <span class="gradient-text">calme et concret.</span></h2>
-            <p class="section-sub">Progression, projet en cours, prochaine suggestion, signaux de sécurité. Disponible en clair et en sombre.</p>
-          </header>
-          <div class="report__toggle" role="tablist" aria-label="Apparence du rapport">
-            <button class="report__tab report__tab--active" data-theme="light" role="tab" aria-selected="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-              Clair
-            </button>
-            <button class="report__tab" data-theme="dark" role="tab" aria-selected="false">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
-              Sombre
-            </button>
-          </div>
-          <div class="report__stage">
+          <div class="trust__report" id="rapport">
+            <div class="report__toggle" role="tablist" aria-label="Apparence du rapport">
+              <button class="report__tab report__tab--active" data-theme="light" role="tab" aria-selected="true">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                Clair
+              </button>
+              <button class="report__tab" data-theme="dark" role="tab" aria-selected="false">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+                Sombre
+              </button>
+            </div>
+
             <article class="report-card report-card--light" id="report-light">
               <header>
-                <div>
-                  <strong>Léa · semaine du 26 mai</strong>
-                  <span>Volume 1 · 9–14 ans · Jour 4 / 7</span>
+                <div class="report-card__brand">
+                  <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                  <div>
+                    <strong>Rapport parent</strong>
+                    <span>Léa · semaine du 26 mai</span>
+                  </div>
                 </div>
                 <span class="badge badge--ok">En route</span>
               </header>
               <div class="report-card__rows">
-                <div>
+                <div class="report-card__row">
                   <h4>Progression</h4>
                   <div class="bar"><span style="width:57%"></span></div>
                   <small>4 missions complétées sur 7</small>
                 </div>
-                <div>
+                <div class="report-card__row">
                   <h4>Projet</h4>
                   <p>Sciences — plan posé, 2 étapes faites cette semaine.</p>
                 </div>
-                <div>
+                <div class="report-card__row">
                   <h4>Prochaine suggestion</h4>
-                  <p>Un check-in calme vendredi soir, 5 minutes. Félix a préparé 3 questions.</p>
+                  <p>Check-in calme vendredi soir, 5 min. Félix a préparé 3 questions.</p>
                 </div>
-                <div>
+                <div class="report-card__row">
                   <h4>Signaux</h4>
-                  <p>Aucun signal sensible cette semaine. Félix vous prévient si quelque chose mérite votre attention.</p>
+                  <p>Aucun signal sensible cette semaine. Félix vous prévient si quelque chose mérite attention.</p>
                 </div>
               </div>
+              <footer class="report-card__foot">
+                <span class="report-card__sig">
+                  <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="22" height="22" />
+                  Préparé avec Félix
+                </span>
+                <span class="report-card__meta">PDF hebdomadaire · livré le vendredi</span>
+              </footer>
             </article>
+
             <article class="report-card report-card--dark" id="report-dark" hidden>
               <header>
-                <div>
-                  <strong>Léa · semaine du 26 mai</strong>
-                  <span>Volume 1 · 9–14 ans · Jour 4 / 7</span>
+                <div class="report-card__brand">
+                  <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                  <div>
+                    <strong>Rapport parent</strong>
+                    <span>Léa · semaine du 26 mai</span>
+                  </div>
                 </div>
                 <span class="badge badge--ok">En route</span>
               </header>
               <div class="report-card__rows">
-                <div>
+                <div class="report-card__row">
                   <h4>Progression</h4>
                   <div class="bar"><span style="width:57%"></span></div>
                   <small>4 missions complétées sur 7</small>
                 </div>
-                <div>
+                <div class="report-card__row">
                   <h4>Projet</h4>
                   <p>Sciences — plan posé, 2 étapes faites cette semaine.</p>
                 </div>
-                <div>
+                <div class="report-card__row">
                   <h4>Prochaine suggestion</h4>
-                  <p>Un check-in calme vendredi soir, 5 minutes. Félix a préparé 3 questions.</p>
+                  <p>Check-in calme vendredi soir, 5 min. Félix a préparé 3 questions.</p>
                 </div>
-                <div>
+                <div class="report-card__row">
                   <h4>Signaux</h4>
-                  <p>Aucun signal sensible cette semaine. Félix vous prévient si quelque chose mérite votre attention.</p>
+                  <p>Aucun signal sensible cette semaine. Félix vous prévient si quelque chose mérite attention.</p>
                 </div>
               </div>
+              <footer class="report-card__foot">
+                <span class="report-card__sig">
+                  <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="22" height="22" />
+                  Préparé avec Félix
+                </span>
+                <span class="report-card__meta">PDF hebdomadaire · livré le vendredi</span>
+              </footer>
             </article>
           </div>
         </div>
       </section>
 
       <!-- ============================================== -->
-      <!-- AGENT LAB / PROJECT BUILDER                     -->
+      <!-- AGENT LAB · steps + project board mockup         -->
       <!-- ============================================== -->
       <section class="lab" id="agent-lab">
         <div class="container lab__inner">
@@ -628,26 +670,139 @@
             <p class="eyebrow eyebrow--blue">Agent Lab</p>
             <h2>Construire un mini-projet IA, <span class="gradient-text">étape par étape.</span></h2>
             <p class="lede">
-              Le jeune choisit un problème utile, Félix propose une trame, on découpe en étapes simples, on teste, on améliore. Pas de jargon, pas de magie&nbsp;: une méthode reproductible.
+              Votre jeune choisit un problème utile, Félix propose une trame, on découpe en étapes simples, on teste, on améliore. Pas de jargon, pas de magie&nbsp;: une méthode reproductible.
             </p>
             <ol class="lab__steps">
-              <li data-num="1"><div><strong>Choisir</strong>un problème utile à la vraie vie. <span>Une chose qui simplifie une journée.</span></div></li>
-              <li data-num="2"><div><strong>Cadrer</strong>avec Félix&nbsp;: à qui ça sert, pourquoi. <span>Définir ce que « marcher » veut dire.</span></div></li>
-              <li data-num="3"><div><strong>Construire</strong>un mini-prototype en étapes. <span>3 étapes concrètes, 30 minutes max.</span></div></li>
-              <li data-num="4"><div><strong>Tester</strong>auprès d'un parent ou ami. <span>Recueillir des retours honnêtes.</span></div></li>
-              <li data-num="5"><div><strong>Améliorer</strong>selon ce qu'on apprend. <span>Refaire un petit cycle, garder une trace.</span></div></li>
+              <li data-num="1"><div><strong>Choisir</strong><span>Un problème utile à la vraie vie. Une chose qui simplifie une journée.</span></div></li>
+              <li data-num="2"><div><strong>Cadrer</strong><span>Avec Félix&nbsp;: à qui ça sert, pourquoi, comment savoir si ça marche.</span></div></li>
+              <li data-num="3"><div><strong>Construire</strong><span>Un mini-prototype en 3 étapes, 30 minutes maximum.</span></div></li>
+              <li data-num="4"><div><strong>Tester</strong><span>Auprès d'un parent ou ami. Recueillir des retours honnêtes.</span></div></li>
+              <li data-num="5"><div><strong>Améliorer</strong><span>Refaire un petit cycle, garder une trace, partager.</span></div></li>
             </ol>
           </div>
-          <figure class="lab__media">
-            <img src="assets/felix-exact/07-project-modules-felix-exact-white.jpg"
-                 alt="Modules de projet — Félix présente l'Agent Lab."
-                 width="1100" height="650" loading="lazy" />
+
+          <div class="lab__media">
+            <figure class="lab__visual">
+              <img src="assets/felix-exact/07-project-modules-felix-exact-white.jpg"
+                   alt="Félix présente les modules de l'Agent Lab."
+                   width="1100" height="650" loading="lazy" />
+            </figure>
+            <div class="lab__board" aria-label="Tableau de projet Agent Lab">
+              <header class="lab__board-head">
+                <span class="tag tag--blue">Mini-projet · Sciences</span>
+                <span class="muted">Léa · semaine 1</span>
+              </header>
+              <div class="lab__board-cols">
+                <div class="lab__board-col">
+                  <h5>À faire</h5>
+                  <article class="lab__board-card">
+                    <strong>Trouver une source</strong>
+                    <span>Quelqu'un qui a déjà mesuré la croissance d'une plante.</span>
+                  </article>
+                </div>
+                <div class="lab__board-col">
+                  <h5>En cours</h5>
+                  <article class="lab__board-card lab__board-card--current">
+                    <span class="tag tag--warm">Félix</span>
+                    <strong>Cadrer la question</strong>
+                    <span>« Est-ce que la lumière naturelle change la vitesse de croissance ? »</span>
+                  </article>
+                </div>
+                <div class="lab__board-col">
+                  <h5>Fait</h5>
+                  <article class="lab__board-card lab__board-card--done">
+                    <strong>Choisir un sujet</strong>
+                    <span>Plantes & lumière. Décidé en 10 min.</span>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- FUTURE PATHS · subdued, Volume 1 stays primary   -->
+      <!-- ============================================== -->
+      <section class="paths" id="parcours">
+        <div class="container">
+          <header class="section-head section-head--center">
+            <p class="eyebrow eyebrow--soft">L'architecture future</p>
+            <h2>Le Volume 1 d'abord. <span class="gradient-text">D'autres parcours arriveront.</span></h2>
+            <p class="section-sub">Une même méthode pour toute la famille&nbsp;: voir clair, choisir une priorité, agir 10 minutes, recommencer. Aujourd'hui, seul le Volume 1 (9–14 ans, 79 $) est actif.</p>
+          </header>
+
+          <div class="paths__grid">
+            <article class="path-card path-card--featured">
+              <span class="path-card__ribbon path-card__ribbon--warm" aria-hidden="true">
+                <span class="path-card__ribbon-dot" aria-hidden="true"></span>
+                Actif · Volume 1
+              </span>
+              <figure class="path-card__media">
+                <img src="assets/felix-exact/03-course-card-junior-exact-felix-white.jpg"
+                     alt="Carte parcours Volume 1 avec Félix."
+                     width="800" height="800" loading="lazy" />
+              </figure>
+              <div class="path-card__body">
+                <span class="tag tag--warm">9 à 14 ans</span>
+                <h3 class="path-card__title">Mon premier système de vie avec l'IA</h3>
+                <p class="path-card__desc">Le parcours principal pour les jeunes de 9 à 14 ans. Voir clair, choisir, agir, créer un mini-projet utile avec Félix.</p>
+                <ul class="path-card__outcomes">
+                  <li>Carte de vie + une vraie priorité</li>
+                  <li>Mini-plan de projet + micro-habitude</li>
+                  <li>Check-in parent / mentor</li>
+                </ul>
+                <div class="path-card__price-row">
+                  <strong>79 $</strong><span>CAD · sans abonnement</span>
+                </div>
+                <a class="link-arrow" href="#volume1">Voir le Volume 1</a>
+              </div>
+            </article>
+
+            <article class="path-card path-card--quiet">
+              <span class="path-card__ribbon" aria-hidden="true">À venir</span>
+              <div class="path-card__body">
+                <span class="tag tag--ink">Ado</span>
+                <h3 class="path-card__title">Apprendre, créer, présenter avec l'IA</h3>
+                <p class="path-card__desc">Une version ado pour passer du test au système&nbsp;: projets scolaires, créatifs et personnels avec méthode.</p>
+                <ul class="path-card__outcomes path-card__outcomes--muted">
+                  <li>Projet créatif ou scolaire abouti</li>
+                  <li>Script de confiance pour moments difficiles</li>
+                  <li>Plan de 30 jours réutilisable</li>
+                </ul>
+                <p class="path-card__pricing">Prix et date à confirmer. Le Volume 1 (79 $) reste le parcours actif.</p>
+              </div>
+            </article>
+
+            <article class="path-card path-card--quiet">
+              <span class="path-card__ribbon" aria-hidden="true">À venir</span>
+              <div class="path-card__body">
+                <span class="tag tag--blue">Adulte</span>
+                <h3 class="path-card__title">De l'idée au premier petit projet encadré</h3>
+                <p class="path-card__desc">Pour les adultes qui veulent apprendre à créer de la valeur avec l'IA — éthique, encadré, sans promesse de revenu.</p>
+                <ul class="path-card__outcomes path-card__outcomes--muted">
+                  <li>Choisir un problème utile</li>
+                  <li>Construire un mini-projet avec étapes</li>
+                  <li>Présenter à un pair ou mentor</li>
+                </ul>
+                <p class="path-card__pricing">Prix et date à confirmer. Le Volume 1 (79 $) reste le parcours actif.</p>
+              </div>
+            </article>
+          </div>
+
+          <figure class="paths__lineup" id="parcours-detail">
+            <img src="assets/felix-exact/04-course-lineup-junior-teen-adult-felix-exact-white.jpg"
+                 alt="Alignement Junior, Ado, Adulte — Félix présente les trois parcours côte à côte."
+                 width="2200" height="1300" loading="lazy" />
+            <figcaption>
+              <strong>Architecture future.</strong> Aujourd'hui, seul le Volume 1 (9–14 ans · 79 $) est actif. Ado et Adulte arriveront plus tard.
+            </figcaption>
           </figure>
         </div>
       </section>
 
       <!-- ============================================== -->
-      <!-- LOGIN / CONNEXION                               -->
+      <!-- LOGIN / CONNEXION · premium preview              -->
       <!-- ============================================== -->
       <section class="login" id="connexion">
         <div class="container login__inner">
@@ -659,7 +814,7 @@
             </p>
             <ul class="checklist">
               <li>Aperçu sans création de compte</li>
-              <li>Trois rôles&nbsp;: Parent, Jeune, Mentor</li>
+              <li>Trois rôles&nbsp;: Jeune, Parent, Mentor</li>
               <li>Aucune donnée réelle stockée à ce stade</li>
               <li>Prix Volume 1 confirmé&nbsp;: 79 $ — paiement réel non activé</li>
             </ul>
@@ -717,21 +872,28 @@
           <div class="screen" id="screen-cockpit" role="tabpanel">
             <div class="screen__shell">
               <header class="screen__head">
-                <h4>Cockpit du jour</h4>
+                <div>
+                  <h4>Cockpit du jour</h4>
+                  <p class="muted">Bonjour Léa — Félix a préparé ta journée.</p>
+                </div>
                 <span class="pill">Jour 3 · Habit Loop</span>
               </header>
               <div class="dashgrid dashgrid--app">
                 <article class="dashcard dashcard--big">
-                  <span class="tag tag--warm">Mission du jour</span>
-                  <h4>Choisir une vraie priorité (10 min)</h4>
+                  <header class="dashcard__head">
+                    <span class="tag tag--warm">Mission du jour</span>
+                    <span class="muted">10 min</span>
+                  </header>
+                  <h4>Choisir une vraie priorité</h4>
                   <p>Félix t'aide à enlever un obstacle concret.</p>
                   <div class="dashcard__progress"><span style="width:42%"></span></div>
-                  <button class="btn btn--primary btn--sm" type="button">Commencer avec Félix</button>
+                  <button class="btn btn--primary btn--sm" type="button">Commencer avec Félix →</button>
                 </article>
                 <article class="dashcard">
                   <span class="tag">Parcours</span>
-                  <h4>Volume 1 · 3/7</h4>
-                  <p>Prochaine étape&nbsp;: Habit Loop</p>
+                  <h4>Volume 1 · 3 / 7</h4>
+                  <p>Prochaine&nbsp;: Habit Loop</p>
+                  <div class="bar bar--mini"><span style="width:43%"></span></div>
                 </article>
                 <article class="dashcard">
                   <span class="tag tag--blue">Projet</span>
@@ -743,6 +905,10 @@
                   <h4>Vendredi soir</h4>
                   <p>3 questions calmes</p>
                 </article>
+                <article class="dashcard dashcard--felix">
+                  <span class="tag tag--warm">Félix · message</span>
+                  <p>« Tu avances bien. Une chose à la fois suffit. »</p>
+                </article>
               </div>
             </div>
           </div>
@@ -751,8 +917,11 @@
           <div class="screen" id="screen-parcours" role="tabpanel" hidden>
             <div class="screen__shell">
               <header class="screen__head">
-                <h4>Parcours d'apprentissage</h4>
-                <span class="pill">Volume 1 · 9–14 ans</span>
+                <div>
+                  <h4>Parcours d'apprentissage</h4>
+                  <p class="muted">Volume 1 · 9–14 ans · 7 missions</p>
+                </div>
+                <span class="pill">Jour 3 / 7</span>
               </header>
               <div class="modules">
                 <article class="module module--done">
@@ -795,6 +964,22 @@
                   </div>
                   <span class="module__state">À venir</span>
                 </article>
+                <article class="module">
+                  <span class="module__num">6</span>
+                  <div>
+                    <h5>Agent Lab Build</h5>
+                    <p>Construire le mini-projet.</p>
+                  </div>
+                  <span class="module__state">À venir</span>
+                </article>
+                <article class="module">
+                  <span class="module__num">7</span>
+                  <div>
+                    <h5>Check-in &amp; Share</h5>
+                    <p>Partager au parent, garder une trace.</p>
+                  </div>
+                  <span class="module__state">À venir</span>
+                </article>
               </div>
             </div>
           </div>
@@ -803,7 +988,10 @@
           <div class="screen" id="screen-felix" role="tabpanel" hidden>
             <div class="screen__shell">
               <header class="screen__head">
-                <h4>Félix Live</h4>
+                <div>
+                  <h4>Félix Live</h4>
+                  <p class="muted">Mentor IA · présence calme</p>
+                </div>
                 <span class="pill">Simulé · aperçu</span>
               </header>
               <div class="chat">
@@ -816,7 +1004,7 @@
                 </div>
                 <div class="chat__bubble chat__bubble--felix">
                   <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
-                  <p>D'accord. On rétrécit le problème. Quelle est la première chose que tu pourrais faire en 10 minutes pour que ça paraisse moins gros ?</p>
+                  <p>D'accord. On rétrécit le problème. Quelle première chose pourrais-tu faire en 10 minutes pour que ça paraisse moins gros ?</p>
                 </div>
               </div>
               <form class="chat__compose" onsubmit="event.preventDefault()">
@@ -831,19 +1019,22 @@
           <div class="screen" id="screen-lab" role="tabpanel" hidden>
             <div class="screen__shell">
               <header class="screen__head">
-                <h4>Agent Lab · mini-projet</h4>
+                <div>
+                  <h4>Agent Lab · mini-projet</h4>
+                  <p class="muted">Choisir · Cadrer · Construire · Tester · Améliorer</p>
+                </div>
                 <span class="pill">Build → Check → Improve</span>
               </header>
               <div class="lab-grid">
-                <article class="lab-step">
-                  <span class="tag tag--warm">Étape 1</span>
-                  <h5>Choisir un problème utile</h5>
-                  <p>Une chose qui simplifie une journée.</p>
+                <article class="lab-step lab-step--done">
+                  <span class="tag tag--green">Étape 1 · fait</span>
+                  <h5>Choisir un problème</h5>
+                  <p>Plantes & lumière naturelle.</p>
                 </article>
                 <article class="lab-step lab-step--current">
-                  <span class="tag">Étape 2</span>
+                  <span class="tag tag--warm">Étape 2 · en cours</span>
                   <h5>Cadrer avec Félix</h5>
-                  <p>Pour qui ? Pourquoi ? Comment savoir si ça marche ?</p>
+                  <p>« Est-ce que la lumière change la vitesse de croissance ? »</p>
                 </article>
                 <article class="lab-step">
                   <span class="tag tag--soft">Étape 3</span>
@@ -863,28 +1054,34 @@
           <div class="screen" id="screen-parent" role="tabpanel" hidden>
             <div class="screen__shell">
               <header class="screen__head">
-                <h4>Rapport parent · vue Mentor</h4>
+                <div>
+                  <h4>Rapport parent · vue Mentor</h4>
+                  <p class="muted">Vendredi · 5 minutes de lecture</p>
+                </div>
                 <span class="pill">Hebdo</span>
               </header>
               <article class="report-card report-card--light report-card--inline">
                 <header>
-                  <div>
-                    <strong>Léa · semaine du 26 mai</strong>
-                    <span>Volume 1 · 9–14 ans · Jour 4 / 7</span>
+                  <div class="report-card__brand">
+                    <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                    <div>
+                      <strong>Rapport parent</strong>
+                      <span>Léa · semaine du 26 mai · Volume 1 · Jour 4 / 7</span>
+                    </div>
                   </div>
                   <span class="badge badge--ok">En route</span>
                 </header>
                 <div class="report-card__rows">
-                  <div>
+                  <div class="report-card__row">
                     <h4>Progression</h4>
                     <div class="bar"><span style="width:57%"></span></div>
                     <small>4 missions complétées sur 7</small>
                   </div>
-                  <div>
+                  <div class="report-card__row">
                     <h4>Notes visibles</h4>
                     <p>Léa a choisi une priorité sciences et a posé un mini-plan. Bonne semaine pour encourager.</p>
                   </div>
-                  <div>
+                  <div class="report-card__row">
                     <h4>Suggestion</h4>
                     <p>Check-in calme vendredi. 3 questions préparées par Félix.</p>
                   </div>
@@ -897,8 +1094,11 @@
           <div class="screen" id="screen-profil" role="tabpanel" hidden>
             <div class="screen__shell">
               <header class="screen__head">
-                <h4>Profil &amp; préférences</h4>
-                <span class="pill">Aperçu visuel</span>
+                <div>
+                  <h4>Profil &amp; préférences</h4>
+                  <p class="muted">Aperçu visuel · paramètres simulés</p>
+                </div>
+                <span class="pill">Aperçu</span>
               </header>
               <div class="settings">
                 <div class="setting">
@@ -925,17 +1125,17 @@
       </section>
 
       <!-- ============================================== -->
-      <!-- FAQ / SAFEGUARDS                                -->
+      <!-- FAQ                                              -->
       <!-- ============================================== -->
       <section class="faq" id="faq">
         <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">FAQ &amp; repères</p>
+          <header class="section-head section-head--center">
+            <p class="eyebrow">Questions sincères</p>
             <h2>Les questions que vous vous posez — <span class="gradient-text">sans hype.</span></h2>
             <p class="section-sub">Volume 1, prix, sécurité, limites de Félix&nbsp;: nos réponses honnêtes.</p>
           </header>
           <div class="faq__grid">
-            <details>
+            <details open>
               <summary>À qui s'adresse OptimizeMyLife ?</summary>
               <p>Le <strong>Volume 1</strong> s'adresse aux jeunes de <strong>9 à 14 ans</strong> et aux familles qui veulent un cadre clair pour apprendre l'IA avec Félix. Les autres parcours arriveront plus tard.</p>
             </details>
@@ -964,27 +1164,42 @@
       </section>
 
       <!-- ============================================== -->
-      <!-- FINAL CTA                                       -->
+      <!-- FINAL CTA · editorial composition                -->
       <!-- ============================================== -->
       <section class="final-cta" id="cta">
-        <div class="container final-cta__inner">
-          <figure class="final-cta__media">
-            <img src="assets/felix-exact/10-footer-cta-banner-felix-exact-white.jpg"
-                 alt="Bannière finale — Félix vous invite à découvrir l'expérience Volume 1."
-                 width="2400" height="900" loading="lazy" />
-          </figure>
-          <div class="final-cta__copy">
-            <p class="eyebrow">Prêt à commencer ?</p>
-            <h2>Donnez à votre jeune de <span class="gradient-text">9 à 14 ans</span> une vraie méthode pour apprendre l'IA.</h2>
-            <p class="lede">Le Volume 1 avec Félix — un parcours complet, un seul prix, sans abonnement.</p>
-            <span class="final-cta__price" aria-label="Prix : 79 dollars canadiens">
-              79 $ <small>CAD · Volume 1 · sans abonnement</small>
-            </span>
-            <div class="final-cta__ctas">
-              <a class="btn btn--primary btn--lg" href="#connexion">Réserver l'accès — 79 $ <span class="btn__arrow" aria-hidden="true">→</span></a>
-              <a class="btn btn--ghost btn--lg" href="#connexion">Essayer l'accès aperçu</a>
+        <div class="container">
+          <div class="final-cta__card">
+            <figure class="final-cta__media">
+              <img src="assets/felix-exact/10-footer-cta-banner-felix-exact-white.jpg"
+                   alt="Bannière finale — Félix vous invite à découvrir le Volume 1."
+                   width="2400" height="900" loading="lazy" />
+              <span class="final-cta__media-felix" aria-hidden="true">
+                <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="34" height="34" />
+                Félix · vous attend
+              </span>
+            </figure>
+            <div class="final-cta__copy">
+              <p class="eyebrow">Prêt à commencer ?</p>
+              <h2>Donnez à votre jeune de <span class="gradient-text">9 à 14 ans</span> une vraie méthode pour apprendre l'IA.</h2>
+              <p class="lede">Le Volume 1 avec Félix — un parcours complet, un seul prix, sans abonnement.</p>
+              <div class="final-cta__price-row">
+                <span class="final-cta__price" aria-label="Prix : 79 dollars canadiens">
+                  79<span class="final-cta__price-cur">$</span>
+                  <small>CAD · Volume 1 · sans abonnement</small>
+                </span>
+                <span class="final-cta__guarantee">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                  Paiement réel non activé dans le prototype
+                </span>
+              </div>
+              <div class="final-cta__ctas">
+                <a class="btn btn--primary btn--lg" href="#connexion">
+                  <span>Réserver l'accès — 79 $</span>
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="btn btn--ghost btn--lg" href="#connexion">Essayer l'accès aperçu</a>
+              </div>
             </div>
-            <p class="micro">Prix Volume 1 confirmé&nbsp;: 79 $. Paiement réel non activé dans ce prototype.</p>
           </div>
         </div>
       </section>
@@ -1001,17 +1216,16 @@
           </span>
           <div>
             <strong>OptimizeMyLife</strong>
-            <span>avec Félix · prototype Volume 1 · 79 $</span>
+            <span>avec Félix · prototype · Volume 1 · 79 $</span>
           </div>
         </div>
         <nav class="foot__nav" aria-label="Pied de page">
           <a href="#start">Accueil</a>
-          <a href="#felix">Félix</a>
           <a href="#volume1">Volume 1</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#app">App</a>
+          <a href="#felix">Félix</a>
+          <a href="#app">L'app</a>
           <a href="#confiance">Confiance</a>
-          <a href="#faq">FAQ</a>
+          <a href="#faq">Questions</a>
           <a href="#connexion">Connexion</a>
         </nav>
         <p class="foot__legal">
