@@ -1,23 +1,920 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OptimizeMyLife</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="OptimizeMyLife — un système de vie guidé par Félix, pour aider les jeunes et les familles à apprendre l'IA avec structure, confiance et clarté." />
+    <meta name="theme-color" content="#f97316" />
+    <title>OptimizeMyLife — Apprendre l'IA avec Félix, pour les jeunes et les familles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assets/felix-exact/00-source-felix-crop-exact.png" />
   </head>
-  <body>
-    <main class="page-shell">
-      <section class="hero">
-        <div class="brand-mark">Felix</div>
-        <p class="eyebrow">OptimizeMyLife with AI</p>
-        <h1>Get 5-10 hours per week back at home.</h1>
-        <p class="subhead">
-          A practical AI-powered home system for reducing mental load, organizing routines,
-          and making everyday life easier.
-        </p>
-        <a class="button" href="#start">Start here</a>
+  <body data-page="public">
+    <a class="skip-link" href="#start">Aller au contenu</a>
+
+    <!-- ============================================== -->
+    <!-- PROTOTYPE BANNER                                -->
+    <!-- ============================================== -->
+    <div class="proto-banner" role="status" aria-live="polite">
+      <span class="proto-banner__dot" aria-hidden="true"></span>
+      Prototype visuel — connexion réelle, paiement et données à venir. En attente d'approbation Max pour publication.
+    </div>
+
+    <!-- ============================================== -->
+    <!-- TOP NAV                                         -->
+    <!-- ============================================== -->
+    <header class="nav" id="top">
+      <div class="nav__inner">
+        <a class="nav__brand" href="#top" aria-label="OptimizeMyLife — Accueil">
+          <span class="nav__brand-mark" aria-hidden="true">
+            <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="40" height="40" />
+          </span>
+          <span class="nav__brand-text">
+            <span class="nav__brand-name">OptimizeMyLife</span>
+            <span class="nav__brand-sub">avec Félix</span>
+          </span>
+        </a>
+        <nav class="nav__links" aria-label="Navigation principale">
+          <a href="#start">Accueil</a>
+          <a href="#felix">Félix</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#app">App</a>
+          <a href="#rapport">Rapport parent</a>
+          <a href="#confiance">Confiance</a>
+          <a href="#connexion">Connexion</a>
+        </nav>
+        <div class="nav__cta">
+          <a class="btn btn--ghost btn--sm" href="#connexion">Connexion</a>
+          <a class="btn btn--primary btn--sm" href="#app-preview">Voir la démo</a>
+        </div>
+        <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="nav__mobile" id="navMobile" aria-label="Navigation mobile" hidden>
+        <a href="#start">Accueil</a>
+        <a href="#felix">Félix</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#app">App</a>
+        <a href="#rapport">Rapport parent</a>
+        <a href="#confiance">Confiance</a>
+        <a href="#connexion">Connexion</a>
+        <a class="btn btn--primary" href="#app-preview">Voir la démo</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- ============================================== -->
+      <!-- HERO                                            -->
+      <!-- ============================================== -->
+      <section class="hero" id="start">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__inner container">
+          <div class="hero__copy">
+            <p class="eyebrow">
+              <span class="eyebrow__dot" aria-hidden="true"></span>
+              OptimizeMyLife · système de vie guidé par l'IA
+            </p>
+            <h1 class="hero__title">
+              Aidez votre enfant à apprendre l'IA <span class="hero__title-accent">avec structure, confiance et clarté.</span>
+            </h1>
+            <p class="hero__sub">
+              Félix accompagne les jeunes et les familles dans un parcours guidé : objectifs, focus, habitudes, projets et premier réflexe entrepreneurial — avec un repère clair pour les parents.
+            </p>
+            <div class="hero__ctas">
+              <a class="btn btn--primary btn--lg" href="#app-preview">Voir la démo</a>
+              <a class="btn btn--ghost btn--lg" href="#felix">Découvrir Félix</a>
+            </div>
+            <p class="hero__micro">
+              Aucun résultat garanti. Pas une thérapie. Pas un remplacement scolaire. Un parcours structuré pour apprendre à utiliser l'IA de façon pratique et responsable.
+            </p>
+            <ul class="hero__trust" aria-label="Repères de confiance">
+              <li><span aria-hidden="true">✦</span> Vouvoiement parents</li>
+              <li><span aria-hidden="true">✦</span> Tutoiement jeunes en parcours</li>
+              <li><span aria-hidden="true">✦</span> Repères parent visibles</li>
+            </ul>
+          </div>
+
+          <div class="hero__visual">
+            <figure class="hero__felix">
+              <img src="assets/felix-exact/01-hero-landing-felix-exact-white.jpg"
+                   alt="Félix, mentor IA d'OptimizeMyLife, présenté avec le coffret produit."
+                   width="1100" height="650" fetchpriority="high" />
+            </figure>
+            <div class="hero__device" aria-label="Aperçu de l'app sur mobile">
+              <div class="phone">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <div class="cockpit-mini">
+                    <header class="cockpit-mini__head">
+                      <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="36" height="36" />
+                      <div>
+                        <strong>Bonjour Léa</strong>
+                        <span>Félix a une mission pour aujourd'hui.</span>
+                      </div>
+                    </header>
+                    <article class="cockpit-mini__card">
+                      <span class="tag tag--warm">Mission du jour</span>
+                      <h3>Choisir une vraie priorité (10 min)</h3>
+                      <p>Félix t'aide à enlever un obstacle concret.</p>
+                      <div class="cockpit-mini__progress"><span style="width:46%"></span></div>
+                    </article>
+                    <article class="cockpit-mini__card cockpit-mini__card--alt">
+                      <span class="tag">Projet en cours</span>
+                      <h3>Projet de sciences</h3>
+                      <p>3 prochaines étapes prêtes.</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- LOGO STRIP / PILIERS                            -->
+      <!-- ============================================== -->
+      <section class="piliers container" aria-label="Piliers du parcours">
+        <ul class="piliers__list">
+          <li><strong>Objectifs</strong><span>Une vraie priorité par jour</span></li>
+          <li><strong>Focus</strong><span>Réduire le bruit, agir 10 min</span></li>
+          <li><strong>Projets</strong><span>De l'idée à l'étape concrète</span></li>
+          <li><strong>Habitudes</strong><span>Petites boucles maintenables</span></li>
+          <li><strong>Confiance</strong><span>Un script utile au bon moment</span></li>
+          <li><strong>Parent</strong><span>Check-in clair, pas surveillance</span></li>
+        </ul>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- FÉLIX MENTOR / VIDEO BLOCK                      -->
+      <!-- ============================================== -->
+      <section class="felix" id="felix">
+        <div class="container felix__inner">
+          <div class="felix__media">
+            <figure class="video-card" role="group" aria-label="Aperçu mentor Félix">
+              <img src="assets/felix-exact/05-felix-ai-live-feature-exact-white.jpg"
+                   alt="Félix présente une session mentor avec un écran d'app."
+                   width="1100" height="650" loading="lazy" />
+              <button class="video-card__play" type="button" aria-label="Lecture (aperçu — vidéo à venir)">
+                <span aria-hidden="true">▶</span>
+              </button>
+              <figcaption class="video-card__caption">Mentor moment · 1 min 20 (aperçu)</figcaption>
+            </figure>
+          </div>
+          <div class="felix__copy">
+            <p class="eyebrow eyebrow--blue">Mentor IA, pas chatbot anonyme</p>
+            <h2>Félix parle directement à votre jeune — calme, clair, encourageant.</h2>
+            <p class="lede">
+              Félix pose de meilleures questions, organise les idées, propose une petite action et invite à un check-in parent quand c'est utile. Pas de promesses magiques. Une présence chaleureuse, transparente et structurée.
+            </p>
+            <blockquote class="felix__quote">
+              « Petite vérité de renard : paniquer n'est pas une stratégie. Faire un plan, oui. »
+              <cite>— Félix</cite>
+            </blockquote>
+            <ul class="checklist">
+              <li>Toujours transparent sur ses limites</li>
+              <li>Ne remplace ni parents, ni enseignants, ni professionnels</li>
+              <li>Encourage l'action, pas la dépendance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PARCOURS / PRODUCT CARDS                        -->
+      <!-- ============================================== -->
+      <section class="paths" id="parcours">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Parcours guidés</p>
+            <h2>Un chemin clair pour chaque âge.</h2>
+            <p class="section-sub">Trois parcours, une même méthode : voir clair, choisir une priorité, agir 10 minutes, recommencer.</p>
+          </header>
+
+          <div class="paths__grid">
+            <article class="path-card path-card--junior">
+              <figure class="path-card__media">
+                <img src="assets/felix-exact/02-product-box-junior-exact-felix-white.jpg"
+                     alt="Coffret Junior avec Félix."
+                     width="800" height="1000" loading="lazy" />
+              </figure>
+              <div class="path-card__body">
+                <span class="tag tag--warm">Junior</span>
+                <h3>Mon premier système de vie avec l'IA</h3>
+                <p>Pour les jeunes qui découvrent l'IA. Apprendre à voir clair, choisir, agir. 7 jours pour démarrer un système simple.</p>
+                <ul class="path-card__outcomes">
+                  <li>Carte de vie + une vraie priorité</li>
+                  <li>Mini-plan de projet + micro-habitude</li>
+                  <li>Check-in parent / mentor</li>
+                </ul>
+                <a class="link-arrow" href="#parcours-detail">Voir le parcours →</a>
+              </div>
+            </article>
+
+            <article class="path-card path-card--ado">
+              <figure class="path-card__media">
+                <img src="assets/felix-exact/03-course-card-junior-exact-felix-white.jpg"
+                     alt="Carte cours Ado avec Félix."
+                     width="800" height="800" loading="lazy" />
+              </figure>
+              <div class="path-card__body">
+                <span class="tag tag--ink">Ado</span>
+                <h3>Apprendre, créer, présenter avec l'IA</h3>
+                <p>Pour les ados qui veulent passer du test au système : projets scolaires, créatifs et personnels, avec confiance et méthode.</p>
+                <ul class="path-card__outcomes">
+                  <li>Projet créatif ou scolaire abouti</li>
+                  <li>Script de confiance pour moments difficiles</li>
+                  <li>Plan de 30 jours réutilisable</li>
+                </ul>
+                <a class="link-arrow" href="#parcours-detail">Voir le parcours →</a>
+              </div>
+            </article>
+
+            <article class="path-card path-card--biz">
+              <figure class="path-card__media">
+                <img src="assets/felix-exact/07-project-modules-felix-exact-white.jpg"
+                     alt="Modules projet Agent Lab avec Félix."
+                     width="800" height="500" loading="lazy" />
+              </figure>
+              <div class="path-card__body">
+                <span class="tag tag--blue">Premier projet IA</span>
+                <h3>De l'idée au premier petit projet encadré</h3>
+                <p>Pour ceux qui veulent apprendre à créer de la valeur avec l'IA — éthique, encadré, adapté à l'âge. Pas une promesse de revenu.</p>
+                <ul class="path-card__outcomes">
+                  <li>Choisir un problème utile</li>
+                  <li>Construire un mini-projet avec étapes</li>
+                  <li>Présenter à un parent ou mentor</li>
+                </ul>
+                <a class="link-arrow" href="#parcours-detail">Voir le parcours →</a>
+              </div>
+            </article>
+
+            <article class="path-card path-card--famille">
+              <div class="path-card__body path-card__body--solo">
+                <span class="tag tag--soft">Famille — aperçu</span>
+                <h3>Un repère commun pour parents et jeunes</h3>
+                <p>Une vue partagée : ce que votre enfant apprend, ce qu'il prépare, les bons moments pour discuter — sans surveillance invasive.</p>
+                <ul class="path-card__outcomes">
+                  <li>Rapport parent hebdomadaire</li>
+                  <li>Suggestions de conversations</li>
+                  <li>Repères de sécurité</li>
+                </ul>
+                <p class="path-card__pricing">Offre à confirmer avec Max — pas encore publiée.</p>
+              </div>
+            </article>
+          </div>
+
+          <figure class="paths__lineup" id="parcours-detail">
+            <img src="assets/felix-exact/04-course-lineup-junior-teen-adult-felix-exact-white.jpg"
+                 alt="Alignement Junior, Ado, Adulte — Félix présente les trois parcours côte à côte."
+                 width="2200" height="1300" loading="lazy" />
+            <figcaption>Architecture parcours — Junior, Ado, Adulte. Adulte arrive plus tard.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- APP PREVIEW (MOBILE + DESKTOP)                  -->
+      <!-- ============================================== -->
+      <section class="app-preview" id="app">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Une vraie expérience produit</p>
+            <h2>L'app derrière le parcours — pensée mobile et desktop.</h2>
+            <p class="section-sub">Cockpit du jour, parcours d'apprentissage, mentor Félix Live, Agent Lab, rapport parent. Tout est connecté.</p>
+          </header>
+
+          <div class="app-preview__stage" id="app-preview">
+            <!-- Desktop mock -->
+            <div class="desktop-mock" aria-label="Aperçu desktop">
+              <div class="desktop-mock__chrome">
+                <span class="desktop-mock__dot"></span>
+                <span class="desktop-mock__dot"></span>
+                <span class="desktop-mock__dot"></span>
+                <span class="desktop-mock__url">app.optimizemylife · cockpit</span>
+              </div>
+              <div class="desktop-mock__body">
+                <aside class="desktop-mock__sidebar">
+                  <div class="side-brand">
+                    <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="28" height="28" />
+                    <span>OptimizeMyLife</span>
+                  </div>
+                  <nav>
+                    <a class="side-link side-link--active" href="#app-preview"><span aria-hidden="true">●</span> Cockpit</a>
+                    <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Parcours</a>
+                    <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Félix Live</a>
+                    <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Agent Lab</a>
+                    <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Rapport parent</a>
+                    <a class="side-link" href="#app-preview"><span aria-hidden="true">○</span> Profil</a>
+                  </nav>
+                  <div class="side-foot">
+                    <span>Mode Aperçu</span>
+                    <small>Connexion réelle à venir</small>
+                  </div>
+                </aside>
+                <section class="desktop-mock__main">
+                  <header class="desktop-mock__topbar">
+                    <div>
+                      <h3>Bonjour Léa 👋</h3>
+                      <p>Félix a préparé ta journée. 10 minutes suffisent.</p>
+                    </div>
+                    <div class="topbar-actions">
+                      <span class="pill">Jour 3 · Habit Loop</span>
+                      <button class="btn btn--ghost btn--sm" type="button">Demander à Félix</button>
+                    </div>
+                  </header>
+                  <div class="dashgrid">
+                    <article class="dashcard dashcard--big">
+                      <span class="tag tag--warm">Mission du jour</span>
+                      <h4>Choisir une vraie priorité (10 min)</h4>
+                      <p>Félix t'aide à enlever un obstacle concret de ta semaine.</p>
+                      <div class="dashcard__progress"><span style="width:42%"></span></div>
+                      <div class="dashcard__row">
+                        <button class="btn btn--primary btn--sm" type="button">Commencer avec Félix</button>
+                        <span class="muted">3 étapes · 10 min</span>
+                      </div>
+                    </article>
+                    <article class="dashcard">
+                      <span class="tag">Parcours en cours</span>
+                      <h4>Junior · Mon premier système</h4>
+                      <p>3 / 7 jours · prochaine étape : Habit Loop.</p>
+                      <div class="dashcard__progress"><span style="width:43%"></span></div>
+                    </article>
+                    <article class="dashcard">
+                      <span class="tag tag--blue">Agent Lab</span>
+                      <h4>Mini-projet sciences</h4>
+                      <p>Plan + 3 prochaines actions prêtes.</p>
+                    </article>
+                    <article class="dashcard">
+                      <span class="tag tag--soft">Check-in parent</span>
+                      <h4>Suggéré pour vendredi</h4>
+                      <p>3 questions calmes, pas d'interrogatoire.</p>
+                    </article>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <!-- Mobile mock -->
+            <div class="mobile-mock-stack" aria-label="Aperçu mobile">
+              <div class="phone phone--big">
+                <div class="phone__notch" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <div class="m-app">
+                    <div class="m-app__head">
+                      <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="40" height="40" />
+                      <div>
+                        <strong>Bonjour Léa</strong>
+                        <span>Jour 3 · Habit Loop</span>
+                      </div>
+                    </div>
+                    <article class="m-card m-card--hero">
+                      <span class="tag tag--warm">Aujourd'hui</span>
+                      <h4>10 minutes pour choisir une vraie priorité</h4>
+                      <p>Félix t'accompagne étape par étape.</p>
+                      <button class="btn btn--primary btn--block" type="button">Commencer</button>
+                    </article>
+                    <div class="m-row">
+                      <article class="m-card m-card--mini">
+                        <span class="tag">Projet</span>
+                        <strong>Sciences</strong>
+                        <small>3 étapes prêtes</small>
+                      </article>
+                      <article class="m-card m-card--mini">
+                        <span class="tag tag--soft">Habitude</span>
+                        <strong>5 min focus</strong>
+                        <small>Streak 3 jours</small>
+                      </article>
+                    </div>
+                    <nav class="m-tabbar" aria-label="Navigation app mobile">
+                      <a class="m-tab m-tab--active" href="#app-preview">Cockpit</a>
+                      <a class="m-tab" href="#app-preview">Parcours</a>
+                      <a class="m-tab" href="#app-preview">Félix</a>
+                      <a class="m-tab" href="#app-preview">Lab</a>
+                      <a class="m-tab" href="#app-preview">Profil</a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="app-preview__legend">Aperçu visuel — la vraie connexion, la base de données et la sécurité production sont en attente d'approbation Max.</p>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PARENT TRUST CENTER                             -->
+      <!-- ============================================== -->
+      <section class="trust" id="confiance">
+        <div class="container trust__inner">
+          <div class="trust__media">
+            <img src="assets/felix-exact/06-parent-trust-section-felix-exact-white.jpg"
+                 alt="Félix présente la section confiance parent."
+                 width="1100" height="650" loading="lazy" />
+          </div>
+          <div class="trust__copy">
+            <p class="eyebrow eyebrow--blue">Confiance parents</p>
+            <h2>Pensé pour être visible, structuré et responsable.</h2>
+            <p class="lede">
+              Vous voyez ce que votre enfant prépare, sans transformer l'expérience en surveillance. Vous comprenez ce que Félix peut et ne peut pas faire. Vous gardez les conversations humaines pour vous.
+            </p>
+            <div class="trust__grid">
+              <div class="trust__cell">
+                <h3>Ce que vous voyez</h3>
+                <p>Progrès, priorités de la semaine, notes de projet, suggestions de check-in.</p>
+              </div>
+              <div class="trust__cell">
+                <h3>Limites claires</h3>
+                <p>Félix n'est ni thérapeute, ni enseignant, ni médecin. Pas de diagnostic, pas de promesse de note.</p>
+              </div>
+              <div class="trust__cell">
+                <h3>Pas de secret</h3>
+                <p>L'expérience est conçue pour la transparence parent, pas pour des conversations cachées.</p>
+              </div>
+              <div class="trust__cell">
+                <h3>Données prudentes</h3>
+                <p>Le moins possible. Aucune garantie absolue de confidentialité ne sera promise sans preuves techniques.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- PARENT REPORT LIGHT/DARK PREVIEW                -->
+      <!-- ============================================== -->
+      <section class="report" id="rapport">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Rapport parent — aperçu</p>
+            <h2>Un repère hebdomadaire, calme et concret.</h2>
+            <p class="section-sub">Progression, projet en cours, prochaine suggestion, signaux de sécurité. Disponible en clair et en sombre.</p>
+          </header>
+          <div class="report__toggle" role="tablist" aria-label="Apparence du rapport">
+            <button class="report__tab report__tab--active" data-theme="light" role="tab" aria-selected="true">Clair</button>
+            <button class="report__tab" data-theme="dark" role="tab" aria-selected="false">Sombre</button>
+          </div>
+          <div class="report__stage">
+            <article class="report-card report-card--light" id="report-light">
+              <header>
+                <div>
+                  <strong>Léa · semaine du 26 mai</strong>
+                  <span>Parcours Junior · Jour 4 / 7</span>
+                </div>
+                <span class="badge badge--ok">En route</span>
+              </header>
+              <div class="report-card__rows">
+                <div>
+                  <h4>Progression</h4>
+                  <div class="bar"><span style="width:57%"></span></div>
+                  <small>4 missions complétées sur 7</small>
+                </div>
+                <div>
+                  <h4>Projet</h4>
+                  <p>Sciences — plan posé, 2 étapes faites cette semaine.</p>
+                </div>
+                <div>
+                  <h4>Prochaine suggestion</h4>
+                  <p>Un check-in calme vendredi soir, 5 minutes. Félix a préparé 3 questions.</p>
+                </div>
+                <div>
+                  <h4>Signaux</h4>
+                  <p>Aucun signal sensible cette semaine. Félix vous prévient si quelque chose mérite votre attention.</p>
+                </div>
+              </div>
+            </article>
+            <article class="report-card report-card--dark" id="report-dark" hidden>
+              <header>
+                <div>
+                  <strong>Léa · semaine du 26 mai</strong>
+                  <span>Parcours Junior · Jour 4 / 7</span>
+                </div>
+                <span class="badge badge--ok">En route</span>
+              </header>
+              <div class="report-card__rows">
+                <div>
+                  <h4>Progression</h4>
+                  <div class="bar"><span style="width:57%"></span></div>
+                  <small>4 missions complétées sur 7</small>
+                </div>
+                <div>
+                  <h4>Projet</h4>
+                  <p>Sciences — plan posé, 2 étapes faites cette semaine.</p>
+                </div>
+                <div>
+                  <h4>Prochaine suggestion</h4>
+                  <p>Un check-in calme vendredi soir, 5 minutes. Félix a préparé 3 questions.</p>
+                </div>
+                <div>
+                  <h4>Signaux</h4>
+                  <p>Aucun signal sensible cette semaine. Félix vous prévient si quelque chose mérite votre attention.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- AGENT LAB / PROJECT BUILDER                     -->
+      <!-- ============================================== -->
+      <section class="lab" id="agent-lab">
+        <div class="container lab__inner">
+          <div class="lab__copy">
+            <p class="eyebrow eyebrow--blue">Agent Lab</p>
+            <h2>Construire un mini-projet IA, étape par étape.</h2>
+            <p class="lede">
+              Le jeune choisit un problème utile, Félix propose une trame, on découpe en étapes simples, on teste, on améliore. Pas de jargon, pas de magie, juste une méthode reproductible.
+            </p>
+            <ol class="lab__steps">
+              <li><strong>1. Choisir</strong> un problème utile à la vraie vie.</li>
+              <li><strong>2. Cadrer</strong> avec Félix : à qui ça sert, pourquoi.</li>
+              <li><strong>3. Construire</strong> un mini-prototype en étapes.</li>
+              <li><strong>4. Tester</strong> auprès d'un parent ou ami.</li>
+              <li><strong>5. Améliorer</strong> selon ce qu'on apprend.</li>
+            </ol>
+          </div>
+          <figure class="lab__media">
+            <img src="assets/felix-exact/07-project-modules-felix-exact-white.jpg"
+                 alt="Modules de projet — Félix présente l'Agent Lab."
+                 width="1100" height="650" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- LOGIN / CONNEXION                               -->
+      <!-- ============================================== -->
+      <section class="login" id="connexion">
+        <div class="container login__inner">
+          <div class="login__copy">
+            <p class="eyebrow">Connexion · Aperçu prototype</p>
+            <h2>Entrez dans l'expérience.</h2>
+            <p class="lede">
+              Un aperçu de l'app derrière la connexion. Choisissez votre rôle, essayez le mode démo, et explorez les écrans clés du parcours.
+            </p>
+            <ul class="checklist">
+              <li>Aperçu sans création de compte</li>
+              <li>Trois rôles : Parent, Jeune, Mentor</li>
+              <li>Aucune donnée réelle stockée à ce stade</li>
+            </ul>
+            <p class="micro">Prototype visuel — connexion réelle, mots de passe et sécurité production à venir.</p>
+          </div>
+
+          <form class="login-card" id="loginForm" novalidate>
+            <div class="login-card__tabs" role="tablist" aria-label="Rôle">
+              <button type="button" class="login-tab login-tab--active" data-role="jeune" role="tab" aria-selected="true">Jeune</button>
+              <button type="button" class="login-tab" data-role="parent" role="tab" aria-selected="false">Parent</button>
+              <button type="button" class="login-tab" data-role="mentor" role="tab" aria-selected="false">Mentor</button>
+            </div>
+            <div class="login-card__head">
+              <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="Félix vous accueille." width="56" height="56" />
+              <div>
+                <strong>Félix vous accueille</strong>
+                <span id="loginGreeting">Bonjour, prêt·e à choisir une priorité ?</span>
+              </div>
+            </div>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="vous@exemple.com" autocomplete="email" />
+            </label>
+            <label class="field">
+              <span>Mot de passe</span>
+              <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" />
+            </label>
+            <div class="login-card__actions">
+              <button type="submit" class="btn btn--primary btn--block" id="loginSubmit">Continuer (aperçu)</button>
+              <button type="button" class="btn btn--ghost btn--block" id="demoLogin">Continuer avec un accès démo</button>
+            </div>
+            <p class="login-card__note" id="loginNote" role="status" aria-live="polite">
+              Prototype visuel — aucune authentification réelle. Vos saisies ne sont pas envoyées.
+            </p>
+          </form>
+        </div>
+
+        <!-- Post-login preview screens revealed after demo login -->
+        <div class="container login__preview" id="postLogin" hidden>
+          <header class="section-head section-head--compact">
+            <p class="eyebrow">Aperçu après connexion</p>
+            <h3 id="postLoginTitle">Voici ce que vous verriez en mode Jeune.</h3>
+          </header>
+
+          <div class="app-tabs" role="tablist" aria-label="Écrans de l'app">
+            <button class="app-tabs__btn app-tabs__btn--active" data-screen="cockpit" role="tab" aria-selected="true">Cockpit</button>
+            <button class="app-tabs__btn" data-screen="parcours" role="tab" aria-selected="false">Parcours</button>
+            <button class="app-tabs__btn" data-screen="felix" role="tab" aria-selected="false">Félix Live</button>
+            <button class="app-tabs__btn" data-screen="lab" role="tab" aria-selected="false">Agent Lab</button>
+            <button class="app-tabs__btn" data-screen="parent" role="tab" aria-selected="false">Rapport parent</button>
+            <button class="app-tabs__btn" data-screen="profil" role="tab" aria-selected="false">Profil</button>
+          </div>
+
+          <!-- COCKPIT -->
+          <div class="screen" id="screen-cockpit" role="tabpanel">
+            <div class="screen__shell">
+              <header class="screen__head">
+                <h4>Cockpit du jour</h4>
+                <span class="pill">Jour 3 · Habit Loop</span>
+              </header>
+              <div class="dashgrid dashgrid--app">
+                <article class="dashcard dashcard--big">
+                  <span class="tag tag--warm">Mission du jour</span>
+                  <h4>Choisir une vraie priorité (10 min)</h4>
+                  <p>Félix t'aide à enlever un obstacle concret.</p>
+                  <div class="dashcard__progress"><span style="width:42%"></span></div>
+                  <button class="btn btn--primary btn--sm" type="button">Commencer avec Félix</button>
+                </article>
+                <article class="dashcard">
+                  <span class="tag">Parcours</span>
+                  <h4>Junior · 3/7</h4>
+                  <p>Prochaine étape : Habit Loop</p>
+                </article>
+                <article class="dashcard">
+                  <span class="tag tag--blue">Projet</span>
+                  <h4>Sciences</h4>
+                  <p>3 étapes prêtes</p>
+                </article>
+                <article class="dashcard">
+                  <span class="tag tag--soft">Check-in</span>
+                  <h4>Vendredi soir</h4>
+                  <p>3 questions calmes</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARCOURS -->
+          <div class="screen" id="screen-parcours" role="tabpanel" hidden>
+            <div class="screen__shell">
+              <header class="screen__head">
+                <h4>Parcours d'apprentissage</h4>
+                <span class="pill">Junior actif</span>
+              </header>
+              <div class="modules">
+                <article class="module module--done">
+                  <span class="module__num">1</span>
+                  <div>
+                    <h5>Carte de vie</h5>
+                    <p>Voir clair sur école, projets, énergie.</p>
+                  </div>
+                  <span class="module__state">Fait</span>
+                </article>
+                <article class="module module--done">
+                  <span class="module__num">2</span>
+                  <div>
+                    <h5>Focus Reset</h5>
+                    <p>Choisir une vraie priorité.</p>
+                  </div>
+                  <span class="module__state">Fait</span>
+                </article>
+                <article class="module module--current">
+                  <span class="module__num">3</span>
+                  <div>
+                    <h5>Habit Loop</h5>
+                    <p>Construire une micro-habitude maintenable.</p>
+                  </div>
+                  <span class="module__state">En cours</span>
+                </article>
+                <article class="module">
+                  <span class="module__num">4</span>
+                  <div>
+                    <h5>Project Plan</h5>
+                    <p>De l'idée aux 3 prochaines étapes.</p>
+                  </div>
+                  <span class="module__state">À venir</span>
+                </article>
+                <article class="module">
+                  <span class="module__num">5</span>
+                  <div>
+                    <h5>Confidence Script</h5>
+                    <p>Une phrase utile au bon moment.</p>
+                  </div>
+                  <span class="module__state">À venir</span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- FÉLIX LIVE -->
+          <div class="screen" id="screen-felix" role="tabpanel" hidden>
+            <div class="screen__shell">
+              <header class="screen__head">
+                <h4>Félix Live</h4>
+                <span class="pill">Simulé · aperçu</span>
+              </header>
+              <div class="chat">
+                <div class="chat__bubble chat__bubble--felix">
+                  <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                  <p>Bonjour Léa. Tu veux qu'on regarde une priorité pour cette semaine ? Une chose à la fois, c'est plus simple.</p>
+                </div>
+                <div class="chat__bubble chat__bubble--user">
+                  <p>Je me sens dépassée par mon projet de sciences.</p>
+                </div>
+                <div class="chat__bubble chat__bubble--felix">
+                  <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="32" height="32" />
+                  <p>D'accord. On rétrécit le problème. Quelle est la première chose que tu pourrais faire en 10 minutes pour que ça paraisse moins gros ?</p>
+                </div>
+              </div>
+              <form class="chat__compose" onsubmit="event.preventDefault()">
+                <input type="text" placeholder="Écris à Félix… (aperçu)" aria-label="Message à Félix" />
+                <button type="submit" class="btn btn--primary btn--sm">Envoyer</button>
+              </form>
+              <p class="micro">Aperçu visuel — pas de chat IA réel branché à ce stade.</p>
+            </div>
+          </div>
+
+          <!-- AGENT LAB -->
+          <div class="screen" id="screen-lab" role="tabpanel" hidden>
+            <div class="screen__shell">
+              <header class="screen__head">
+                <h4>Agent Lab — mini-projet</h4>
+                <span class="pill">Build → Check → Improve</span>
+              </header>
+              <div class="lab-grid">
+                <article class="lab-step">
+                  <span class="tag tag--warm">Étape 1</span>
+                  <h5>Choisir un problème utile</h5>
+                  <p>Une chose qui simplifie une journée.</p>
+                </article>
+                <article class="lab-step lab-step--current">
+                  <span class="tag">Étape 2</span>
+                  <h5>Cadrer avec Félix</h5>
+                  <p>Pour qui ? Pourquoi ? Comment savoir si ça marche ?</p>
+                </article>
+                <article class="lab-step">
+                  <span class="tag tag--soft">Étape 3</span>
+                  <h5>Construire un mini-prototype</h5>
+                  <p>3 étapes concrètes, 30 minutes maximum.</p>
+                </article>
+                <article class="lab-step">
+                  <span class="tag tag--blue">Étape 4</span>
+                  <h5>Tester</h5>
+                  <p>Demander à un parent ou un ami.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- RAPPORT PARENT -->
+          <div class="screen" id="screen-parent" role="tabpanel" hidden>
+            <div class="screen__shell">
+              <header class="screen__head">
+                <h4>Rapport parent — vue Mentor</h4>
+                <span class="pill">Hebdo</span>
+              </header>
+              <article class="report-card report-card--light report-card--inline">
+                <header>
+                  <div>
+                    <strong>Léa · semaine du 26 mai</strong>
+                    <span>Parcours Junior · Jour 4 / 7</span>
+                  </div>
+                  <span class="badge badge--ok">En route</span>
+                </header>
+                <div class="report-card__rows">
+                  <div>
+                    <h4>Progression</h4>
+                    <div class="bar"><span style="width:57%"></span></div>
+                    <small>4 missions complétées sur 7</small>
+                  </div>
+                  <div>
+                    <h4>Notes visibles</h4>
+                    <p>Léa a choisi une priorité sciences et a posé un mini-plan. Bonne semaine pour encourager.</p>
+                  </div>
+                  <div>
+                    <h4>Suggestion</h4>
+                    <p>Check-in calme vendredi. 3 questions préparées par Félix.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- PROFIL -->
+          <div class="screen" id="screen-profil" role="tabpanel" hidden>
+            <div class="screen__shell">
+              <header class="screen__head">
+                <h4>Profil & préférences</h4>
+                <span class="pill">Aperçu visuel</span>
+              </header>
+              <div class="settings">
+                <div class="setting">
+                  <strong>Rôle</strong>
+                  <span>Jeune · Parcours Junior</span>
+                </div>
+                <div class="setting">
+                  <strong>Notifications Félix</strong>
+                  <span>Le matin et avant le check-in parent</span>
+                </div>
+                <div class="setting">
+                  <strong>Visibilité parent</strong>
+                  <span>Rapport hebdomadaire activé</span>
+                </div>
+                <div class="setting">
+                  <strong>Préférences sécurité</strong>
+                  <span>Aucun partage externe. Aucune donnée vendue.</span>
+                </div>
+                <p class="micro">Aperçu visuel — la gestion réelle des comptes n'est pas active.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- FAQ / SAFEGUARDS                                -->
+      <!-- ============================================== -->
+      <section class="faq" id="faq">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">FAQ & repères</p>
+            <h2>Les questions que vous vous posez — sans hype.</h2>
+          </header>
+          <div class="faq__grid">
+            <details>
+              <summary>À qui s'adresse OptimizeMyLife ?</summary>
+              <p>Aux jeunes (préados et ados) et aux familles qui veulent un cadre clair pour apprendre l'IA. Une version adulte pourra reprendre la même méthode plus tard.</p>
+            </details>
+            <details>
+              <summary>Félix peut-il remplacer un parent, un enseignant ou un thérapeute ?</summary>
+              <p>Non. Félix est éducatif et structuré. Il ne diagnostique pas, ne soigne pas, ne remplace pas un professionnel ou un parent.</p>
+            </details>
+            <details>
+              <summary>Mon enfant va-t-il devenir dépendant de l'IA ?</summary>
+              <p>La méthode vise l'inverse : utiliser l'IA comme outil pour mieux penser, choisir et agir. Pas pour décider à sa place.</p>
+            </details>
+            <details>
+              <summary>Que voient les parents ?</summary>
+              <p>Un rapport hebdomadaire avec progrès, projet, suggestions de conversation et signaux. Pas une surveillance temps réel.</p>
+            </details>
+            <details>
+              <summary>Mes données sont-elles protégées ?</summary>
+              <p>Nous resterons prudents et transparents. Aucune garantie absolue ne sera promise sans preuves techniques. Les détails seront publiés avec l'app réelle.</p>
+            </details>
+            <details>
+              <summary>Quel est le prix ?</summary>
+              <p>Offre à confirmer avec Max — pas encore publiée. Aucun paiement n'est activé à ce stade.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- FINAL CTA                                       -->
+      <!-- ============================================== -->
+      <section class="final-cta" id="cta">
+        <div class="container final-cta__inner">
+          <figure class="final-cta__media">
+            <img src="assets/felix-exact/10-footer-cta-banner-felix-exact-white.jpg"
+                 alt="Bannière finale — Félix vous invite à découvrir l'expérience."
+                 width="2400" height="900" loading="lazy" />
+          </figure>
+          <div class="final-cta__copy">
+            <h2>Donnez à votre enfant une vraie méthode pour apprendre l'IA.</h2>
+            <p>Voyez la démo, découvrez Félix, et inscrivez-vous à l'aperçu privé pour suivre la sortie.</p>
+            <div class="final-cta__ctas">
+              <a class="btn btn--primary btn--lg" href="#app-preview">Voir la démo</a>
+              <a class="btn btn--ghost btn--lg" href="#connexion">Essayer l'accès aperçu</a>
+            </div>
+            <p class="micro">Pas de paiement à ce stade. Vous serez prévenu·e quand l'offre sera prête.</p>
+          </div>
+        </div>
       </section>
     </main>
+
+    <!-- ============================================== -->
+    <!-- FOOTER                                          -->
+    <!-- ============================================== -->
+    <footer class="foot">
+      <div class="container foot__inner">
+        <div class="foot__brand">
+          <span class="nav__brand-mark" aria-hidden="true">
+            <img src="assets/felix-exact/00-source-felix-crop-exact.png" alt="" width="36" height="36" />
+          </span>
+          <div>
+            <strong>OptimizeMyLife</strong>
+            <span>avec Félix · prototype</span>
+          </div>
+        </div>
+        <nav class="foot__nav" aria-label="Pied de page">
+          <a href="#start">Accueil</a>
+          <a href="#felix">Félix</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#app">App</a>
+          <a href="#confiance">Confiance</a>
+          <a href="#faq">FAQ</a>
+          <a href="#connexion">Connexion</a>
+        </nav>
+        <p class="foot__legal">
+          © OptimizeMyLife. Prototype. Pas de promesse de résultat scolaire, médical, financier ou psychologique. Félix ne remplace ni parents, ni enseignants, ni professionnels.
+        </p>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
   </body>
 </html>
