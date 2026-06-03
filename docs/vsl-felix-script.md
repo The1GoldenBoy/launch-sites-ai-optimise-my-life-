@@ -32,25 +32,29 @@ ce que je peux prendre en charge à ta place. »
 
 ---
 
-## 2 · L'ENJEU — on serre (~22 s)
+## 2 · L'ENJEU — on serre (sans menacer) (~22 s)
+*(On vise « je ne veux pas rater ça », pas « je suis foutu ».
+Peur de manquer le train > peur du remplacement. Premium = aspirationnel.)*
 
-`[FOND]` le monde s'accélère derrière lui, la lumière refroidit.
+`[FOND]` le monde s'accélère derrière lui — la lumière se tend, mais ne devient
+jamais sombre. Du mouvement, pas de la menace.
 
-**(honnête, grave)**
+**(posé, honnête — pas alarmiste)**
 « Et on le sait tous : le monde ne fait pas que changer… il **s'accélère**.
-L'IA est en train de réécrire les règles — l'école, le travail, les métiers.
-Lesquels existeront encore dans dix ans… cinq ans… deux ans… ? »
+L'IA est en train de réécrire les règles — l'école, le travail, la façon de créer.
+Ce qui prenait des années se fait maintenant en quelques mois. »
 
 `[FOND]` voix intérieure, presque un silence visuel.
 
-**(plus bas, intime — la petite voix au fond du ventre)**
+**(plus bas, complice — la petite voix, pas la peur)**
 « Et personne ne peut te dire de quoi demain sera fait. Alors cette petite voix
-s'installe : *est-ce que je reste à la page ? Est-ce que mes enfants seront prêts ?
-Est-ce que j'aurai encore ma place là-dedans… ?* »
+s'installe : *est-ce que je suis en train de regarder tout ça passer… sans moi ?
+Est-ce que mes enfants prennent l'avance qu'ils méritent ? Et si je m'y mettais
+maintenant, où est-ce que je pourrais être dans un an ?* »
 
-**(empathique, doux)**
-« Cette incertitude. Ce petit stress, au fond du ventre. Je sais.
-La plupart des gens vont simplement le **subir**. »
+**(empathique, chaleureux)**
+« Ce n'est pas de la peur. C'est une **occasion** — celle que la plupart des gens
+vont regarder filer, simplement parce que personne ne leur a tendu la main. »
 
 ---
 
@@ -156,6 +160,10 @@ Et moi… je serai là pour t'aider à commencer. »
 4. **Les 9 ans : « créer avec l'IA »**, et l'« entreprise propulsée par l'IA » est
    réservée aux plus grands — on garde le ton rassurant pour les parents.
 5. Petites corrections de formulation (« on le sait tous », « je suis là », etc.).
+6. **L'enjeu adouci (section 2)** — on troque la peur du remplacement (« est-ce que
+   j'aurai encore ma place ») contre la peur de manquer le train (« est-ce que je
+   regarde tout ça passer sans moi »). Plus aspirationnel, donc plus premium : on
+   donne envie d'en être, on ne menace pas. Lumière tendue mais jamais sombre.
 
 ---
 
@@ -165,8 +173,9 @@ Et moi… je serai là pour t'aider à commencer. »
 
 **(fier)** « Salut. Moi, c'est Félix. Ton assistant IA personnel. Mon métier ?
 Te rendre du temps de qualité. »
-**(grave)** « Parce que le monde ne change pas : il s'accélère. Dix ans… cinq ans…
-deux ans… ? Et cette petite voix : *est-ce que je reste à la page ?* »
+**(posé)** « Parce que le monde ne change pas : il s'accélère. Et cette petite voix :
+*est-ce que je regarde tout ça passer… sans moi ?* Ce n'est pas une peur. C'est une
+occasion. »
 **(sûr)** « Mais pas toi. Pas besoin d'être un génie : je m'adapte à toi.
 Un texto suffit — une idée, et je bâtis le système autour. »
 **(protecteur)** « Et tes enfants ? Dès neuf ans, ils apprennent à **créer** avec
