@@ -1,0 +1,329 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Intégration des photos réelles au dossier d'incident Nunes / Langlois (Beneva).
+
+Principe : on NE reconstruit PAS le dossier. On repart du PDF original
+(Dossier_incident_Nunes_Langlois_ORIGINAL.pdf), on garde toutes ses pages
+intactes, et on INSÈRE juste après la section « Photographies réelles des
+dommages » (page 7) des pages supplémentaires présentant chaque vraie photo
+déposée dans ./photos-reelles/, dans le même gabarit graphique, avec le badge
+« PHOTO RÉELLE » (vert).
+
+Les images de reconstitution IA du dossier restent intactes et gardent leur
+étiquette « Reconstitution — non photographique ». Le dossier reste honnête
+envers l'assureur.
+
+Usage : python3 generer_dossier.py
+Sortie : ./Dossier_incident_Nunes_Langlois.pdf
+"""
+
+import os
+import io
+import glob
+
+import fitz  # PyMuPDF
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.units import mm
+from reportlab.lib import colors
+from reportlab.lib.utils import ImageReader
+from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import stringWidth
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PHOTOS_DIR = os.path.join(HERE, "photos-reelles")
+ORIGINAL = os.path.join(HERE, "Dossier_incident_Nunes_Langlois_ORIGINAL.pdf")
+OUTPUT = os.path.join(HERE, "Dossier_incident_Nunes_Langlois.pdf")
+
+# La section « Photographies réelles des dommages » est la page 7 (index 6).
+INSERT_AFTER_PAGE_INDEX = 6
+
+# ----------------------------------------------------------------------------
+# Polices (calquées sur le document original : corps en DejaVu Sans, étiquettes
+# en mono, titres en serif).
+# ----------------------------------------------------------------------------
+FONT_DIR = "/usr/share/fonts/truetype/dejavu"
+pdfmetrics.registerFont(TTFont("Body", f"{FONT_DIR}/DejaVuSans.ttf"))
+pdfmetrics.registerFont(TTFont("Body-Bold", f"{FONT_DIR}/DejaVuSans-Bold.ttf"))
+pdfmetrics.registerFont(TTFont("Mono", f"{FONT_DIR}/DejaVuSansMono.ttf"))
+pdfmetrics.registerFont(TTFont("Mono-Bold", f"{FONT_DIR}/DejaVuSansMono-Bold.ttf"))
+pdfmetrics.registerFont(TTFont("Serif", f"{FONT_DIR}/DejaVuSerif.ttf"))
+pdfmetrics.registerFont(TTFont("Serif-Bold", f"{FONT_DIR}/DejaVuSerif-Bold.ttf"))
+
+# Palette échantillonnée sur le PDF original
+OR = colors.HexColor("#A8895E")        # accent or / tan
+OR_CLAIR = colors.HexColor("#C7A778")
+NAVY = colors.HexColor("#12293F")      # titres / éléments sombres
+SLATE = colors.HexColor("#5C6472")     # corps de texte gris ardoise
+SLATE_CLAIR = colors.HexColor("#8A909B")
+VERT = colors.HexColor("#1E7A46")      # badge « Photo réelle »
+VERT_CLAIR = colors.HexColor("#EAF5EE")
+BLANC = colors.white
+
+PAGE_W, PAGE_H = A4
+MARGE = 22 * mm
+
+# ----------------------------------------------------------------------------
+# Utilitaires
+# ----------------------------------------------------------------------------
+
+def spaced(text, gap=" "):
+    """Renvoie le texte avec espacement entre les lettres (style petites capitales)."""
+    return gap.join(list(text))
+
+
+def draw_tracked(c, text, x, y, font, size, color, tracking=1.4):
+    """Dessine du texte avec crénage/tracking manuel (letter-spacing)."""
+    c.setFont(font, size)
+    c.setFillColor(color)
+    cur = x
+    for ch in text:
+        c.drawString(cur, y, ch)
+        cur += stringWidth(ch, font, size) + tracking
+    return cur
+
+
+def wrap_text(text, font, size, max_width):
+    lignes = []
+    for para in text.split("\n"):
+        if para == "":
+            lignes.append("")
+            continue
+        courant = ""
+        for mot in para.split(" "):
+            essai = mot if courant == "" else courant + " " + mot
+            if stringWidth(essai, font, size) <= max_width:
+                courant = essai
+            else:
+                if courant:
+                    lignes.append(courant)
+                courant = mot
+        lignes.append(courant)
+    return lignes
+
+
+def header(c, right_top, right_bottom):
+    y = PAGE_H - MARGE
+    draw_tracked(c, "DOSSIER D'INCIDENT  ·  NUNES–LANGLOIS", MARGE, y - 3,
+                 "Mono", 7.5, OR, tracking=1.2)
+    c.setFont("Mono", 7.5)
+    c.setFillColor(SLATE)
+    c.drawRightString(PAGE_W - MARGE, y - 3, right_top)
+    c.drawRightString(PAGE_W - MARGE, y - 3 - 4.2 * mm, right_bottom)
+    # Filet or : segment épais à gauche + trait fin sur toute la largeur
+    ry = y - 8 * mm
+    c.setStrokeColor(colors.HexColor("#E7E1D6"))
+    c.setLineWidth(0.6)
+    c.line(MARGE, ry, PAGE_W - MARGE, ry)
+    c.setStrokeColor(OR)
+    c.setLineWidth(2)
+    c.line(MARGE, ry, MARGE + 28 * mm, ry)
+    return ry - 10 * mm
+
+
+def footer(c):
+    y = 14 * mm
+    c.setStrokeColor(colors.HexColor("#E7E1D6"))
+    c.setLineWidth(0.6)
+    c.line(MARGE, y + 4 * mm, PAGE_W - MARGE, y + 4 * mm)
+    draw_tracked(c, "NUNES–LANGLOIS  ·  21 FÉV. 2026", MARGE, y,
+                 "Mono", 7, SLATE_CLAIR, tracking=1.0)
+    c.setFont("Mono", 7)
+    c.setFillColor(SLATE_CLAIR)
+    c.drawRightString(PAGE_W - MARGE, y, "PHOTOGRAPHIES")
+
+
+def section_title(c, numeral, titre, y):
+    c.setFont("Serif-Bold", 13)
+    c.setFillColor(OR)
+    c.drawString(MARGE, y, numeral)
+    nw = stringWidth(numeral, "Serif-Bold", 13)
+    c.setFont("Serif-Bold", 21)
+    c.setFillColor(NAVY)
+    c.drawString(MARGE + nw + 5 * mm, y, titre)
+    return y - 9 * mm
+
+
+def badge_photo_reelle(c, x, y):
+    """Badge « PHOTO RÉELLE » (vert), style boîte encadrée du document original."""
+    w, h = 26 * mm, 9 * mm
+    c.setFillColor(VERT_CLAIR)
+    c.setStrokeColor(VERT)
+    c.setLineWidth(1.1)
+    c.roundRect(x, y, w, h, 1.2 * mm, fill=1, stroke=1)
+    c.setFillColor(VERT)
+    draw_tracked(c, "PHOTO", x + 4.5 * mm, y + h - 3.6 * mm, "Mono-Bold", 7, VERT, 0.8)
+    draw_tracked(c, "RÉELLE", x + 4.5 * mm, y + 1.6 * mm, "Mono-Bold", 7, VERT, 0.8)
+    return w, h
+
+
+def fit(path, box_w, box_h):
+    img = ImageReader(path)
+    iw, ih = img.getSize()
+    r = min(box_w / iw, box_h / ih)
+    return iw * r, ih * r, img
+
+
+LEGENDES = {
+    "feu-arriere": "FEU ARRIÈRE — LENTILLE FENDUE ET BRISÉE",
+    "aile-arriere": "AILE ARRIÈRE — ENFONCEMENT ET ÉRAFLURES",
+    "aile-enfoncee": "AILE ARRIÈRE — ENFONCEMENT AU POINT DE CONTACT",
+    "wrap-dechire": "HABILLAGE (WRAP) DÉCHIRÉ ET SOULEVÉ",
+    "wrap": "HABILLAGE (WRAP) DÉCHIRÉ ET SOULEVÉ",
+    "pare-chocs": "COIN DE PARE-CHOCS ENFONCÉ",
+    "coin-pare-chocs": "COIN DE PARE-CHOCS ENFONCÉ",
+    "raccord": "RACCORD AILE / PARE-CHOCS DÉSALIGNÉ",
+    "raccord-desaligne": "RACCORD AILE / PARE-CHOCS DÉSALIGNÉ",
+    "bas-de-caisse": "BAS DE CAISSE — TRACES DE CONTACT",
+    "bas-caisse": "BAS DE CAISSE — TRACES DE CONTACT",
+}
+
+
+def legende(path):
+    base = os.path.splitext(os.path.basename(path))[0].lower()
+    # retire préfixe "photo-reelle-NN-"
+    key = base
+    for pre in ("photo-reelle-", "photo-reele-"):
+        if key.startswith(pre):
+            key = key[len(pre):]
+    # enlève le numéro de tête
+    parts = key.split("-")
+    if parts and parts[0].isdigit():
+        parts = parts[1:]
+    key = "-".join(parts)
+    if key in LEGENDES:
+        return LEGENDES[key]
+    # correspondance partielle
+    for k, v in LEGENDES.items():
+        if k in key:
+            return v
+    return spaced(key.replace("-", " ").upper(), " ") if key else "PHOTOGRAPHIE DU VÉHICULE A"
+
+
+def list_photos():
+    exts = ("*.jpg", "*.jpeg", "*.JPG", "*.JPEG", "*.png", "*.PNG")
+    found = []
+    for e in exts:
+        found += glob.glob(os.path.join(PHOTOS_DIR, e))
+    return sorted(set(found))
+
+
+# ----------------------------------------------------------------------------
+# Construction des pages supplémentaires (photos réelles)
+# ----------------------------------------------------------------------------
+
+def build_photo_pages_pdf(photos):
+    """Retourne un PDF (bytes) contenant les pages de photos réelles."""
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=A4)
+
+    per_page = 2
+    total = len(photos)
+    idx = 0
+    while idx < total:
+        y = header(c, "Photographies", "des dommages (suite)")
+        y = section_title(c, "VI", "Photographies réelles — compléments", y)
+        # sous-titre
+        c.setFont("Body", 9.5)
+        c.setFillColor(SLATE)
+        sub = ("Clichés authentiques supplémentaires du véhicule A (Jaguar F-Type R), "
+               "pris après l'événement — aucune retouche.")
+        for ln in wrap_text(sub, "Body", 9.5, PAGE_W - 2 * MARGE):
+            c.drawString(MARGE, y, ln)
+            y -= 4.6 * mm
+        y -= 4 * mm
+
+        zone_top = y
+        zone_bottom = 22 * mm
+        slot_h = (zone_top - zone_bottom) / per_page
+
+        for _ in range(per_page):
+            if idx >= total:
+                break
+            path = photos[idx]
+            cap_h = 11 * mm
+            box_w = PAGE_W - 2 * MARGE
+            box_h = slot_h - cap_h - 6 * mm
+            try:
+                w, h, img = fit(path, box_w, box_h)
+            except Exception:
+                idx += 1
+                continue
+            slot_top = zone_top - (_ ) * slot_h
+            x = MARGE + (box_w - w) / 2
+            img_top = slot_top
+            c.drawImage(img, x, img_top - h, width=w, height=h,
+                        preserveAspectRatio=True, mask='auto')
+            c.setStrokeColor(colors.HexColor("#D8D8D8"))
+            c.setLineWidth(0.8)
+            c.rect(x, img_top - h, w, h, fill=0, stroke=1)
+
+            # barre de légende sous la photo
+            cap_y = img_top - h - cap_h
+            c.setFillColor(colors.HexColor("#F5F3EE"))
+            c.rect(MARGE, cap_y, box_w, cap_h, fill=1, stroke=0)
+            c.setFillColor(OR)
+            c.rect(MARGE, cap_y, 2.5 * mm, cap_h, fill=1, stroke=0)
+            # texte légende (mono, tracké) — possiblement sur 2 lignes
+            lg = legende(path)
+            c.setFillColor(NAVY)
+            lg_lines = wrap_text(lg, "Mono-Bold", 7.5, box_w - 40 * mm)
+            ty = cap_y + cap_h - 4 * mm if len(lg_lines) > 1 else cap_y + cap_h / 2 - 1 * mm
+            for ln in lg_lines:
+                draw_tracked(c, ln, MARGE + 7 * mm, ty, "Mono-Bold", 7.5, NAVY, 0.8)
+                ty -= 4 * mm
+            # badge
+            badge_photo_reelle(c, PAGE_W - MARGE - 26 * mm - 3 * mm, cap_y + (cap_h - 9 * mm) / 2)
+
+            idx += 1
+
+        footer(c)
+        c.showPage()
+
+    c.save()
+    buf.seek(0)
+    return buf.read()
+
+
+# ----------------------------------------------------------------------------
+# Assemblage : original[0..6] + pages photos + original[7..]
+# ----------------------------------------------------------------------------
+
+def build():
+    photos = list_photos()
+    if not os.path.exists(ORIGINAL):
+        raise SystemExit(f"PDF original introuvable : {ORIGINAL}")
+
+    base = fitz.open(ORIGINAL)
+    if not photos:
+        base.save(OUTPUT)
+        return OUTPUT, 0, base.page_count
+
+    extra_bytes = build_photo_pages_pdf(photos)
+    extra = fitz.open("pdf", extra_bytes)
+
+    out = fitz.open()
+    # pages 1..7 (index 0..6)
+    out.insert_pdf(base, from_page=0, to_page=INSERT_AFTER_PAGE_INDEX)
+    # pages photos réelles
+    out.insert_pdf(extra)
+    # reste du dossier (index 7..fin)
+    if INSERT_AFTER_PAGE_INDEX + 1 <= base.page_count - 1:
+        out.insert_pdf(base, from_page=INSERT_AFTER_PAGE_INDEX + 1, to_page=base.page_count - 1)
+
+    out.set_metadata({
+        "title": "Dossier d'incident — Nunes / Langlois",
+        "author": "Dossier de réclamation Beneva",
+        "subject": "Constat à l'amiable — 21 février 2026",
+    })
+    out.save(OUTPUT, deflate=True, garbage=3)
+    return OUTPUT, len(photos), out.page_count
+
+
+if __name__ == "__main__":
+    out, nb, pages = build()
+    print(f"OK -> {out}")
+    print(f"Photos réelles ajoutées : {nb}")
+    print(f"Total pages du dossier final : {pages}")
