@@ -291,6 +291,42 @@ def build_photo_pages_pdf(photos):
 # Assemblage : original[0..6] + pages photos + original[7..]
 # ----------------------------------------------------------------------------
 
+# Signatures des témoins à déposer sur la page « Témoins » (prénom -> fichier).
+SIGN_DIR = os.path.join(HERE, "signatures")
+SIGNATURES_TEMOINS = {
+    "Lucie": "signature_lucie.jpg",
+    "Rosalie": "signature_rosalie.jpg",
+    "Michael": "signature_michael.jpg",
+}
+
+
+def place_signatures_temoins(doc):
+    """Dépose les signatures manuscrites dans la colonne Signature de la page Témoins."""
+    for page in doc:
+        txt = page.get_text()
+        if "Témoins" not in txt:
+            continue
+        words = page.get_text("words")  # x0,y0,x1,y1,mot,...
+        # bornes de la colonne « Signature »
+        sig_hdr = [w for w in words if w[4].upper() == "SIGNATURE"]
+        if not sig_hdr:
+            continue
+        col_x0 = sig_hdr[0][0] - 4
+        page_right = page.rect.width - 57.9  # marge symétrique
+        for prenom, fname in SIGNATURES_TEMOINS.items():
+            path = os.path.join(SIGN_DIR, fname)
+            if not os.path.exists(path):
+                continue
+            # trouve la ligne du témoin par son prénom
+            row = [w for w in words if w[4] == prenom]
+            if not row:
+                continue
+            yc = (row[0][1] + row[0][3]) / 2
+            rect = fitz.Rect(col_x0 + 6, yc - 26, min(col_x0 + 6 + 120, page_right), yc + 26)
+            page.insert_image(rect, filename=path, keep_proportion=True, overlay=True)
+        break
+
+
 def build():
     photos = list_photos()
     if not os.path.exists(ORIGINAL):
@@ -312,6 +348,9 @@ def build():
     # reste du dossier (index 7..fin)
     if INSERT_AFTER_PAGE_INDEX + 1 <= base.page_count - 1:
         out.insert_pdf(base, from_page=INSERT_AFTER_PAGE_INDEX + 1, to_page=base.page_count - 1)
+
+    # Dépose les signatures manuscrites des témoins (Lucie, etc.)
+    place_signatures_temoins(out)
 
     out.set_metadata({
         "title": "Dossier d'incident — Nunes / Langlois",
