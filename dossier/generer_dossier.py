@@ -60,6 +60,7 @@ SLATE = colors.HexColor("#5C6472")     # corps de texte gris ardoise
 SLATE_CLAIR = colors.HexColor("#8A909B")
 VERT = colors.HexColor("#1E7A46")      # badge « Photo réelle »
 VERT_CLAIR = colors.HexColor("#EAF5EE")
+AMBRE = colors.HexColor("#B26A00")     # statut « à venir »
 BLANC = colors.white
 
 PAGE_W, PAGE_H = A4
@@ -123,7 +124,7 @@ def header(c, right_top, right_bottom):
     return ry - 10 * mm
 
 
-def footer(c):
+def footer(c, label="PHOTOGRAPHIES"):
     y = 14 * mm
     c.setStrokeColor(colors.HexColor("#E7E1D6"))
     c.setLineWidth(0.6)
@@ -132,7 +133,7 @@ def footer(c):
                  "Mono", 7, SLATE_CLAIR, tracking=1.0)
     c.setFont("Mono", 7)
     c.setFillColor(SLATE_CLAIR)
-    c.drawRightString(PAGE_W - MARGE, y, "PHOTOGRAPHIES")
+    c.drawRightString(PAGE_W - MARGE, y, label)
 
 
 def section_title(c, numeral, titre, y):
@@ -327,6 +328,122 @@ def place_signatures_temoins(doc):
         break
 
 
+# Coordonnées des témoins (prénom -> lignes à écrire dans la colonne Coordonnées).
+COORDS_TEMOINS = {
+    "Lucie": ["450 531-3185", "luciejodoin@hotmail.com"],
+    "Michael": ["450 522-0430"],
+    "Rosalie": ["450 994-3480"],
+}
+
+
+def place_coordinates_temoins(doc):
+    """Écrit les coordonnées des témoins dans la colonne « Coordonnées »."""
+    for page in doc:
+        if "Témoins" not in page.get_text():
+            continue
+        words = page.get_text("words")
+        hdr = [w for w in words if w[4].upper().startswith("COORDONN")]
+        if not hdr:
+            continue
+        cx = hdr[0][0]
+        for prenom, lines in COORDS_TEMOINS.items():
+            row = [w for w in words if w[4] == prenom]
+            if not row:
+                continue
+            ybase = row[0][3]
+            for k, ln in enumerate(lines):
+                size = 8.5 if k == 0 else 7.3
+                page.insert_text((cx, ybase + k * 9), ln, fontname="helv",
+                                 fontsize=size, color=(0.36, 0.39, 0.45))
+        break
+
+
+# Déclarations signées des témoins (recueillies via le formulaire en ligne).
+DECLARATIONS = [
+    {
+        "nom": "Michael Ménard", "role": "COPROPRIÉTAIRE DES LIEUX",
+        "coord": "450 522-0430",
+        "texte": ("Timothé, avec la van de sa conjointe, a reculé dans le côté droit "
+                  "arrière du véhicule stationné de Sara Nunes en voulant sortir de la "
+                  "cour pour s'en aller. On a entendu l'impact de l'intérieur. Il y avait "
+                  "des débris de lumière arrière sur le sol."),
+        "signee": True,
+    },
+    {
+        "nom": "Rosalie Jodoin", "role": "COPROPRIÉTAIRE DES LIEUX",
+        "coord": "450 994-3480",
+        "texte": ("Timothé, avec la van de sa conjointe, a reculé dans le côté droit "
+                  "arrière du véhicule stationné de Sara Nunes en voulant sortir de la "
+                  "cour pour s'en aller. On a entendu l'impact de l'intérieur. Il y avait "
+                  "des débris de lumière arrière sur le sol."),
+        "signee": False,
+    },
+    {
+        "nom": "Lucie Jodoin", "role": "INVITÉE",
+        "coord": "450 531-3185 · luciejodoin@hotmail.com",
+        "texte": ("À son départ, mon neveu Timothé a reculé sur la voiture de Sara."),
+        "signee": True,
+    },
+]
+
+
+def build_declarations_pdf():
+    """Page « Déclarations signées des témoins » (bytes PDF)."""
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=A4)
+    y = header(c, "Attestations", "des témoins")
+    y = section_title(c, "VIII", "Déclarations signées des témoins", y)
+    c.setFont("Body", 9.5)
+    c.setFillColor(SLATE)
+    intro = ("Déclarations recueillies auprès des personnes présentes, via le formulaire "
+             "en ligne. Chaque témoin confirme les faits constatés le 21 février 2026.")
+    for ln in wrap_text(intro, "Body", 9.5, PAGE_W - 2 * MARGE):
+        c.drawString(MARGE, y, ln)
+        y -= 4.6 * mm
+    y -= 5 * mm
+
+    for d in DECLARATIONS:
+        lines = wrap_text(d["texte"], "Body", 10, PAGE_W - 2 * MARGE - 12 * mm)
+        h = 20 * mm + len(lines) * 4.8 * mm
+        c.setFillColor(colors.HexColor("#FBFCFD"))
+        c.setStrokeColor(colors.HexColor("#E1E6EC"))
+        c.setLineWidth(0.8)
+        c.roundRect(MARGE, y - h, PAGE_W - 2 * MARGE, h, 2 * mm, fill=1, stroke=1)
+        c.setFillColor(OR)
+        c.roundRect(MARGE, y - h, 2.5 * mm, h, 1 * mm, fill=1, stroke=0)
+        # nom + rôle
+        c.setFillColor(NAVY)
+        c.setFont("Serif-Bold", 12.5)
+        c.drawString(MARGE + 7 * mm, y - 8 * mm, d["nom"])
+        draw_tracked(c, d["role"], MARGE + 7 * mm, y - 12.5 * mm, "Mono", 7, SLATE_CLAIR, 0.6)
+        # coordonnées (à droite)
+        c.setFont("Mono", 8)
+        c.setFillColor(SLATE)
+        c.drawRightString(PAGE_W - MARGE - 6 * mm, y - 8 * mm, d["coord"])
+        # statut attestation / signature (à droite, 2e ligne)
+        if d["signee"]:
+            statut, col = "ATTESTATION : OUI  ·  SIGNÉ", VERT
+        else:
+            statut, col = "ATTESTATION : OUI  ·  SIGNATURE À VENIR", AMBRE
+        c.setFont("Mono-Bold", 7)
+        c.setFillColor(col)
+        c.drawRightString(PAGE_W - MARGE - 6 * mm, y - 12.5 * mm, statut)
+        # déclaration
+        c.setFont("Body", 10)
+        c.setFillColor(SLATE)
+        ty = y - 18 * mm
+        for ln in lines:
+            c.drawString(MARGE + 7 * mm, ty, ln)
+            ty -= 4.8 * mm
+        y -= h + 6 * mm
+
+    footer(c, label="ATTESTATIONS")
+    c.showPage()
+    c.save()
+    buf.seek(0)
+    return buf.read()
+
+
 def build():
     photos = list_photos()
     if not os.path.exists(ORIGINAL):
@@ -349,8 +466,13 @@ def build():
     if INSERT_AFTER_PAGE_INDEX + 1 <= base.page_count - 1:
         out.insert_pdf(base, from_page=INSERT_AFTER_PAGE_INDEX + 1, to_page=base.page_count - 1)
 
-    # Dépose les signatures manuscrites des témoins (Lucie, etc.)
+    # Dépose les signatures manuscrites + coordonnées des témoins
     place_signatures_temoins(out)
+    place_coordinates_temoins(out)
+
+    # Ajoute la page « Déclarations signées des témoins » à la fin
+    decl = fitz.open("pdf", build_declarations_pdf())
+    out.insert_pdf(decl)
 
     out.set_metadata({
         "title": "Dossier d'incident — Nunes / Langlois",
