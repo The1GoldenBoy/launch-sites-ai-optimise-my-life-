@@ -478,9 +478,10 @@ def build_identification_pdf():
     y = header(c, "Conducteur", "véhicule B")
     y = section_title(c, "IX", "Conducteur du véhicule B — identification", y)
 
-    # Encadré : absence de signature
-    note = ("M. Timothée Langlois, conducteur du véhicule B au moment de l'incident, "
-            "n'a pas signé le constat à l'amiable. Son identité est établie ci-dessous "
+    # Encadré : partie responsable non participante
+    note = ("La partie responsable de l'accident — véhicule B, conduit par M. Timothée "
+            "Langlois — n'a pas participé au constat à l'amiable. Aucune signature n'a "
+            "pu être obtenue de sa part. Son identité est néanmoins établie ci-dessous "
             "d'après son permis de conduire du Québec.")
     nlines = wrap_text(note, "Body", 9.5, PAGE_W - 2 * MARGE - 12 * mm)
     nh = 8 * mm + len(nlines) * 4.4 * mm
@@ -488,8 +489,8 @@ def build_identification_pdf():
     c.setStrokeColor(AMBRE)
     c.setLineWidth(0.9)
     c.roundRect(MARGE, y - nh, PAGE_W - 2 * MARGE, nh, 2 * mm, fill=1, stroke=1)
-    draw_tracked(c, "CONSTAT NON SIGNÉ PAR LE CONDUCTEUR B", MARGE + 6 * mm, y - 6.5 * mm,
-                 "Mono-Bold", 7.5, AMBRE, 0.7)
+    draw_tracked(c, "PARTIE RESPONSABLE — NON PARTICIPANTE · AUCUNE SIGNATURE",
+                 MARGE + 6 * mm, y - 6.5 * mm, "Mono-Bold", 7.5, AMBRE, 0.7)
     c.setFillColor(GRIS if 'GRIS' in globals() else SLATE)
     c.setFont("Body", 9.5)
     ty = y - 11.5 * mm
