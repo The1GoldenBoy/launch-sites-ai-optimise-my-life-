@@ -23,3 +23,12 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+dossier/original_render/
+dossier/original_images/
+dossier/check_*.png
+*.pyc
+__pycache__/
+dossier/_check_*.png
+dossier/signatures/_preview_*.png
+dossier/signatures/*_raw.txt
+dossier/pieces/
