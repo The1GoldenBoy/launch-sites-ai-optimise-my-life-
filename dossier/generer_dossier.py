@@ -336,6 +336,27 @@ COORDS_TEMOINS = {
 }
 
 
+def place_signature_conducteur_A(doc):
+    """Pose la signature de Sara Nunes (conductrice/propriétaire, véh. A) sur la
+    page « Dommages & signatures », au-dessus du libellé SIGNATURE de gauche."""
+    path = os.path.join(SIGN_DIR, "signature_sara.jpg")
+    if not os.path.exists(path):
+        return
+    for page in doc:
+        t = page.get_text()
+        if "Dommages" not in t or "Sara" not in t:
+            continue
+        words = page.get_text("words")
+        # libellé « SIGNATURE » (majuscules exactes) de la colonne de gauche = Sara (véh. A)
+        sigs = sorted([w for w in words if w[4] == "SIGNATURE"], key=lambda w: w[0])
+        if not sigs:
+            continue
+        sx0, sy0 = sigs[0][0], sigs[0][1]  # coin haut-gauche du libellé de Sara
+        rect = fitz.Rect(sx0, sy0 - 40, sx0 + 165, sy0 - 4)
+        page.insert_image(rect, filename=path, keep_proportion=True, overlay=True)
+        break
+
+
 def place_coordinates_temoins(doc):
     """Écrit les coordonnées des témoins dans la colonne « Coordonnées »."""
     for page in doc:
@@ -577,6 +598,8 @@ def build():
     # Dépose les signatures manuscrites + coordonnées des témoins
     place_signatures_temoins(out)
     place_coordinates_temoins(out)
+    # Signature de Sara Nunes (conductrice/propriétaire, véhicule A)
+    place_signature_conducteur_A(out)
 
     # Ajoute la page « Déclarations signées des témoins » à la fin
     decl = fitz.open("pdf", build_declarations_pdf())
