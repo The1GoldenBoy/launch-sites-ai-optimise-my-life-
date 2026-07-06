@@ -444,6 +444,113 @@ def build_declarations_pdf():
     return buf.read()
 
 
+# Identification du conducteur du véhicule B (permis de conduire).
+PIECES_DIR = os.path.join(HERE, "pieces")
+PERMIS_VEH_B = {
+    "Nom": "Timothée Langlois",
+    "N° de permis": "L5248-120995-18",
+    "Date de naissance": "12 septembre 1995",
+    "Adresse": "441, rue Tardif, Val-des-Sources (QC) J1T 3G5",
+    "Classe(s)": "5",
+    "Conditions": "Aucune",
+    "Mentions": "Aucune",
+    "N° de référence": "R4MUN9F36",
+    "Sexe / Taille / Yeux": "M · 175 cm · Bruns",
+    "Validité": "Valide le 2024-12-10 · Expire le 2027-09-12",
+    "Émis par": "Société de l'assurance automobile du Québec (SAAQ)",
+}
+
+
+def _find_permis_image():
+    if not os.path.isdir(PIECES_DIR):
+        return None
+    for ext in ("*.jpg", "*.jpeg", "*.png", "*.JPG", "*.JPEG", "*.PNG"):
+        found = glob.glob(os.path.join(PIECES_DIR, "permis*" + ext[1:]))
+        if found:
+            return sorted(found)[0]
+    return None
+
+
+def build_identification_pdf():
+    """Page « Conducteur du véhicule B — identification » (bytes PDF)."""
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=A4)
+    y = header(c, "Conducteur", "véhicule B")
+    y = section_title(c, "IX", "Conducteur du véhicule B — identification", y)
+
+    # Encadré : absence de signature
+    note = ("M. Timothée Langlois, conducteur du véhicule B au moment de l'incident, "
+            "n'a pas signé le constat à l'amiable. Son identité est établie ci-dessous "
+            "d'après son permis de conduire du Québec.")
+    nlines = wrap_text(note, "Body", 9.5, PAGE_W - 2 * MARGE - 12 * mm)
+    nh = 8 * mm + len(nlines) * 4.4 * mm
+    c.setFillColor(AMBRE_CLAIR if 'AMBRE_CLAIR' in globals() else colors.HexColor("#FBF0DD"))
+    c.setStrokeColor(AMBRE)
+    c.setLineWidth(0.9)
+    c.roundRect(MARGE, y - nh, PAGE_W - 2 * MARGE, nh, 2 * mm, fill=1, stroke=1)
+    draw_tracked(c, "CONSTAT NON SIGNÉ PAR LE CONDUCTEUR B", MARGE + 6 * mm, y - 6.5 * mm,
+                 "Mono-Bold", 7.5, AMBRE, 0.7)
+    c.setFillColor(GRIS if 'GRIS' in globals() else SLATE)
+    c.setFont("Body", 9.5)
+    ty = y - 11.5 * mm
+    for ln in nlines:
+        c.drawString(MARGE + 6 * mm, ty, ln)
+        ty -= 4.4 * mm
+    y = y - nh - 8 * mm
+
+    # Carte : données du permis
+    keys = list(PERMIS_VEH_B.items())
+    ch = 12 * mm + len(keys) * 7 * mm
+    c.setFillColor(colors.HexColor("#FBFCFD"))
+    c.setStrokeColor(colors.HexColor("#E1E6EC"))
+    c.setLineWidth(0.8)
+    c.roundRect(MARGE, y - ch, PAGE_W - 2 * MARGE, ch, 2 * mm, fill=1, stroke=1)
+    c.setFillColor(BLEU if 'BLEU' in globals() else NAVY)
+    c.roundRect(MARGE, y - ch, 2.5 * mm, ch, 1 * mm, fill=1, stroke=0)
+    c.setFillColor(NAVY)
+    c.setFont("Serif-Bold", 12)
+    c.drawString(MARGE + 8 * mm, y - 8 * mm, "Permis de conduire — Québec (SAAQ)")
+    yy = y - 16 * mm
+    for k, v in keys:
+        c.setFillColor(SLATE_CLAIR)
+        c.setFont("Mono", 7.5)
+        c.drawString(MARGE + 8 * mm, yy, k.upper())
+        c.setFillColor(NAVY)
+        c.setFont("Body", 10)
+        c.drawString(MARGE + 62 * mm, yy, v)
+        yy -= 7 * mm
+    y = y - ch - 8 * mm
+
+    # Image du permis si fournie
+    img = _find_permis_image()
+    if img:
+        box_w = PAGE_W - 2 * MARGE
+        box_h = y - 24 * mm
+        try:
+            ir = ImageReader(img); iw, ih = ir.getSize()
+            r = min(box_w / iw, box_h / ih)
+            w, h = iw * r, ih * r
+            x = MARGE + (box_w - w) / 2
+            c.drawImage(ir, x, y - h, width=w, height=h, preserveAspectRatio=True, mask='auto')
+            c.setStrokeColor(colors.HexColor("#D8D8D8")); c.setLineWidth(0.8)
+            c.rect(x, y - h, w, h, fill=0, stroke=1)
+            c.setFillColor(SLATE); c.setFont("Body-Bold", 9.5)
+            c.drawString(MARGE, y - h - 6 * mm, "Permis de conduire du conducteur du véhicule B (copie fournie).")
+        except Exception:
+            pass
+    else:
+        c.setFillColor(SLATE_CLAIR)
+        c.setFont("Body-Italic" if 'Body-Italic' in [f for f in pdfmetrics.getRegisteredFontNames()] else "Body", 9)
+        c.drawString(MARGE, y - 2 * mm,
+                     "Copie du permis de conduire jointe séparément au dossier.")
+
+    footer(c, label="IDENTIFICATION")
+    c.showPage()
+    c.save()
+    buf.seek(0)
+    return buf.read()
+
+
 def build():
     photos = list_photos()
     if not os.path.exists(ORIGINAL):
@@ -473,6 +580,10 @@ def build():
     # Ajoute la page « Déclarations signées des témoins » à la fin
     decl = fitz.open("pdf", build_declarations_pdf())
     out.insert_pdf(decl)
+
+    # Ajoute la page d'identification du conducteur du véhicule B (permis)
+    ident = fitz.open("pdf", build_identification_pdf())
+    out.insert_pdf(ident)
 
     out.set_metadata({
         "title": "Dossier d'incident — Nunes / Langlois",
